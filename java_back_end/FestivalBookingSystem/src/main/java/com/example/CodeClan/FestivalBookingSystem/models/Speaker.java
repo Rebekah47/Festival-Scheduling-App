@@ -12,7 +12,7 @@ public class Speaker {
     private String name;
     private String webUrl;
     private String headShot;
-    private ArrayList<Discussion> discussions;
-    private ArrayList<Lecture> lectures;
+    private List<Discussion>();
+    private List<Lecture>();
     private String accessibilityRequirements;
 }
