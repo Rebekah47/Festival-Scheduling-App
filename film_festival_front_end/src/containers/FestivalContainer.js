@@ -27,16 +27,13 @@ const requestAll = function(){
     const festivalPromise = request.get('/api/festivals')
 
 Promise.all([
-    attendeePromise, discussionPromise, eventPromise, festivalPromise, filmPromise, lecturePromise, roomPromise, speakerPromise])
+    attendeePromise, eventPromise, festivalPromise, roomPromise, speakerPromise])
     .then((data) => {
         setAttendees(data[0]);
-        setDiscussions(data[1]);
-        setEvents(data[2]);
-        setFestivals(data[3])
-        setFilms(data[4]);
-        setLectures(data[5]);
-        setRooms(data[6]);
-        setSpeakers(data[7]);
+        setEvents(data[1]);
+        setFestivals(data[2])
+        setRooms(data[3]);
+        setSpeakers(data[4]);
     })
 }
 
