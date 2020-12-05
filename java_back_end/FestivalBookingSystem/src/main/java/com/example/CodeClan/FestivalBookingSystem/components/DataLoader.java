@@ -110,8 +110,11 @@ public class DataLoader implements ApplicationRunner {
     attendeeRepo.save(attendee8);
 
     EventType film = new EventType("Film");
+    eventTypeRepo.save(film);
     EventType lecture = new EventType("Lecture");
+    eventTypeRepo.save(lecture);
     EventType discussion = new EventType("Discussion");
+    eventTypeRepo.save(discussion);
 
     Event event1 = new Event("How it all started", localDateTime4, One, film, 0, 160 );
     eventRepo.save(event1);
