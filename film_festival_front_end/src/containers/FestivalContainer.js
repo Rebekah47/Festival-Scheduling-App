@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+<<<<<<< HEAD
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../helpers/Request';
 
@@ -41,6 +42,35 @@ Promise.all([
     return (
         <h1>I am the festival display</h1>
         // <Route path="/pirates" component={PirateContainer} />
+=======
+import Request from '../helpers/Request.js';
+import FestivalList from '../components/festivals/FestivalList.js'
+
+const FestivalContainer = () => {
+
+    const [festivals, setFestivals] = useState([]);
+
+    const requestAll = function(){
+
+        const request = new Request();
+        const festivalPromise = request.get('/api/festivals');
+
+        Promise.all([festivalPromise])
+        .then((data) => {
+            setFestivals(data[0]);
+        })
+
+    }
+
+    useEffect(() => {
+        requestAll();
+    }, [])
+
+    return(
+        <>
+           <FestivalList festivals={festivals} />
+        </>
+>>>>>>> d9806a7... created front end app, can call festivals
     )
 }
 
