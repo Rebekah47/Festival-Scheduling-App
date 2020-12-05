@@ -2,7 +2,7 @@ import React from 'react';
 import Event from "./Event";
 import {Link} from 'react-router-dom';
 
-const EventDetail = ({event, events, onDelete, onUpdate}) => {
+const EventDetail = ({event, rooms, onDelete, onUpdate}) => {
 
     if (!event){
       return "Loading..."
@@ -19,15 +19,15 @@ const EventDetail = ({event, events, onDelete, onUpdate}) => {
     onUpdate(event)
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const index = parseInt(event.target.events.value)
-    const event = events[index];
-    attendee.events.push(event)
-    onUpdate(attendee);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const index = parseInt(evt.target.events.value)
+    const indexEvent = events[index];
+    event.events.push(indexEvent)
+    onUpdate(event);
   }
 
-  const attendeeEvents = attendee.events.map((event, index) => {
+  const eventEvents = event.events.map((event, index) => {
     return <li key={index}>
     {event.name}<button onClick={() => deleteEvent(index)}>Delete</button>
     </li>

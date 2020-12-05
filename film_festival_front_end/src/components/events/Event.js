@@ -16,7 +16,7 @@ const Event = ({event}) => {
     <Link to = {url} className="name">
     {event.name}
     </Link>
-    {/* <p>Event Type: {????}</p> */}
+    <p>Event Type: {event.event_type}</p>
     <p>Start Time: {event.start_time}</p>
     <p>Room: {event.room.name}</p>
     </>
