@@ -1,4 +1,4 @@
-package com.example.CodeClan.FestivalBookingSystem.controllers;
-
-public class LectureController {
-}
+//package com.example.CodeClan.FestivalBookingSystem.controllers;
+//
+//public class LectureController {
+//}

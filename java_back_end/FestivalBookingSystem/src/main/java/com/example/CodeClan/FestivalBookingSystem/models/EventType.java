@@ -7,23 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="eventtypes")
+@Table(name="eventTypes")
 public class EventType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="type")
+    @Column(name="eventType")
     private String type;
 
-    @JsonIgnoreProperties({"type"})
-    @OneToMany(mappedBy="type", cascade=CascadeType.ALL)
+    @JsonIgnoreProperties({"eventType"})
+    @OneToMany(mappedBy="eventType", cascade=CascadeType.ALL)
     private List<Event> events;
 
     public EventType(String type) {
         this.type = type;
-        this.events = new ArrayList<Event>();
+        this.events = new ArrayList<>();
+    }
+
+    public EventType(){
     }
 
     public Long getId() {

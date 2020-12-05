@@ -25,14 +25,14 @@ public class DataLoader implements ApplicationRunner {
   @Autowired
   AttendeeRepo attendeeRepo;
 
-  @Autowired
-  DiscussionRepo discussionRepo;
-
-  @Autowired
-  FilmRepo filmRepo;
-
-  @Autowired
-  LectureRepo lectureRepo;
+//  @Autowired
+//  DiscussionRepo discussionRepo;
+//
+//  @Autowired
+//  FilmRepo filmRepo;
+//
+//  @Autowired
+//  LectureRepo lectureRepo;
 
   @Autowired
   EventRepo eventRepo;

@@ -33,7 +33,7 @@ public class Event {
 
     @JsonIgnoreProperties({"events"})
     @ManyToOne
-    @JoinColumn(name="type")
+    @JoinColumn(name="eventType_id", nullable = false)
     private EventType eventType;
 
     @JsonIgnoreProperties({"events"})
