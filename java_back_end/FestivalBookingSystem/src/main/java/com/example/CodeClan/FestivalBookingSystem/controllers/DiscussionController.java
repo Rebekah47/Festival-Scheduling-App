@@ -18,15 +18,11 @@ public class DiscussionController {
   @GetMapping(value="/discussions")
   public ResponseEntity<List<Discussion>> getDiscussions(){ return new ResponseEntity<>(discussionRepo.findAll(), HttpStatus.OK); }
 
-  @GetMapping(value="discussions/{id}")
-  public ResponseEntity getDiscussion(@PathVariable Long id){ return new ResponseEntity(discussionRepo.findById(id), HttpStatus.OK); }
 
   @PostMapping(value="/discussions")
   public ResponseEntity<Discussion> postDiscussion(@RequestBody Discussion discussion){
     discussionRepo.save(discussion);
     return new ResponseEntity<>(discussion, HttpStatus.CREATED);
   }
-
-
 
 }
