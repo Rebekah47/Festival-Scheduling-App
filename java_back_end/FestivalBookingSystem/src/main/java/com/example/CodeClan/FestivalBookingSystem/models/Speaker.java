@@ -26,10 +26,10 @@ public class Speaker {
     @Column(name="acces_reqs")
     private String accessibilityRequirements;
 
-    @JsonIgnoreProperties({"speakers"})
-    @ManyToOne
-    @JoinColumn(name="festival_id", nullable = false)
-    private Festival festival;
+//    @JsonIgnoreProperties({"speakers"})
+//    @ManyToOne
+//    @JoinColumn(name="festival_id", nullable = false)
+//    private Festival festival;
 
     @JsonIgnoreProperties({"speakers"})
     @ManyToMany
@@ -39,12 +39,12 @@ public class Speaker {
     )
     private List<Event> events;
 
-    public Speaker(String name, String webUrl, String headShot, String accessibilityRequirements, Festival festival) {
+    public Speaker(String name, String webUrl, String headShot, String accessibilityRequirements){//}, Festival festival) {
         this.name = name;
         this.webUrl = webUrl;
         this.headShot = headShot;
         this.accessibilityRequirements = accessibilityRequirements;
-        this.festival = festival;
+//        this.festival = festival;
         this.events = new ArrayList<Event>();
     }
 
@@ -91,13 +91,13 @@ public class Speaker {
         this.accessibilityRequirements = accessibilityRequirements;
     }
 
-    public Festival getFestival() {
-        return festival;
-    }
-
-    public void setFestival(Festival festival) {
-        this.festival = festival;
-    }
+//    public Festival getFestival() {
+//        return festival;
+//    }
+//
+//    public void setFestival(Festival festival) {
+//        this.festival = festival;
+//    }
 
     public List<Event> getEvents() {
         return events;

@@ -49,10 +49,10 @@ class FestivalBookingSystemApplicationTests {
 		Room room = new Room("test room", 5, festival);
 		roomRepo.save(room);
 
-		Speaker speaker = new Speaker("test_speaker", "test_url", "test_headshot", "test requirements", festival);
+		Speaker speaker = new Speaker("test_speaker", "test_url", "test_headshot", "test requirements");//, festival);
 		speakerRepo.save(speaker);
 
-		Attendee attendee = new Attendee("test_attendee", 0, "test requirement", festival);
+		Attendee attendee = new Attendee("test_attendee", 0, "test requirement");//, festival);
 		attendeeRepo.save(attendee);
 
 		Discussion discussion = new Discussion("test_discussion", 120);

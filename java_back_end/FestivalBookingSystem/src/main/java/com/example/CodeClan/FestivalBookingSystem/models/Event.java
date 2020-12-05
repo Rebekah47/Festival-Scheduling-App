@@ -100,7 +100,6 @@ public class Event {
         this.startTime = startTime;
     }
 
-    @JsonIgnore
     public Room getRoom() {
         return room;
     }
@@ -133,7 +132,6 @@ public class Event {
         this.discussion = discussion;
     }
 
-    @JsonIgnore
     public List<Attendee> getAttendees() {
         return attendees;
     }
@@ -142,7 +140,6 @@ public class Event {
         this.attendees = attendees;
     }
 
-    @JsonIgnore
     public List<Speaker> getSpeakers() {
         return speakers;
     }

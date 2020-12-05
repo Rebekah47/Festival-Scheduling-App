@@ -28,13 +28,13 @@ public class Festival {
     @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
     private List<Room> rooms;
 
-    @JsonIgnoreProperties({"festival"})
-    @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
-    private List<Speaker> speakers;
-
-    @JsonIgnoreProperties({"festival"})
-    @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
-    private List<Attendee> attendees;
+//    @JsonIgnoreProperties({"festival"})
+//    @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
+//    private List<Speaker> speakers;
+//
+//    @JsonIgnoreProperties({"festival"})
+//    @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
+//    private List<Attendee> attendees;
 
 
     public Festival(String name, LocalDate startDate, int noDays) {
@@ -42,8 +42,8 @@ public class Festival {
         this.startDate = startDate;
         this.noDays = noDays;
         this.rooms = new ArrayList<Room>();
-        this.speakers = new ArrayList<Speaker>();
-        this.attendees = new ArrayList<Attendee>();
+//        this.speakers = new ArrayList<Speaker>();
+//        this.attendees = new ArrayList<Attendee>();
     }
 
     public Festival() {
@@ -90,21 +90,21 @@ public class Festival {
     }
 
 
-    public List<Speaker> getSpeakers() {
-        return speakers;
-    }
-
-    public void setSpeakers(List<Speaker> speakers) {
-        this.speakers = speakers;
-    }
-
-    public List<Attendee> getAttendees() {
-        return attendees;
-    }
-
-    public void setAttendees(List<Attendee> attendees) {
-        this.attendees = attendees;
-    }
+//    public List<Speaker> getSpeakers() {
+//        return speakers;
+//    }
+//
+//    public void setSpeakers(List<Speaker> speakers) {
+//        this.speakers = speakers;
+//    }
+//
+//    public List<Attendee> getAttendees() {
+//        return attendees;
+//    }
+//
+//    public void setAttendees(List<Attendee> attendees) {
+//        this.attendees = attendees;
+//    }
 }
 
 
