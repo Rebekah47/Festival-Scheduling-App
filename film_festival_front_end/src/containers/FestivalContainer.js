@@ -39,7 +39,7 @@ Promise.all([
         setSpeakers(data[7]);
     })
 }
-
+#
 
 
     return (
