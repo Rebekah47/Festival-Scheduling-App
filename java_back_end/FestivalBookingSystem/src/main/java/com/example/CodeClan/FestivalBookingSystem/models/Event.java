@@ -1,9 +1,6 @@
 package com.example.CodeClan.FestivalBookingSystem.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonSetter;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -23,6 +20,12 @@ public class Event {
     @Column(name="startTime")
     private LocalDateTime startTime;
 
+    @Column(name="age_rating")
+    private int ageRating;
+
+    @Column(name="run_time")
+    private int runTime;
+
     @JsonIgnoreProperties({"events"})
     @ManyToOne
     @JoinColumn(name="room_id", nullable = false)
@@ -30,18 +33,8 @@ public class Event {
 
     @JsonIgnoreProperties({"events"})
     @ManyToOne
-    @JoinColumn(name="film_id")
-    private Film film;
-
-    @JsonIgnoreProperties({"events"})
-    @ManyToOne
-    @JoinColumn(name="lecture_id")
-    private Lecture lecture;
-
-    @JsonIgnoreProperties({"events"})
-    @ManyToOne
-    @JoinColumn(name="discussion_id")
-    private Discussion discussion;
+    @JoinColumn(name="type")
+    private EventType eventType;
 
     @JsonIgnoreProperties({"events"})
     @ManyToMany
@@ -61,14 +54,13 @@ public class Event {
     )
     private List<Speaker> speakers;
 
-
-    public Event(String name, LocalDateTime startTime, Room room, Film film, Discussion discussion, Lecture lecture) {
+    public Event(String name, LocalDateTime startTime, Room room, EventType eventType, int ageRating, int runTime) {
         this.name = name;
         this.startTime = startTime;
+        this.ageRating = ageRating;
+        this.runTime = runTime;
         this.room = room;
-        this.film = film;
-        this.discussion = discussion;
-        this.lecture = lecture;
+        this.eventType = eventType;
         this.attendees = new ArrayList<Attendee>();
         this.speakers = new ArrayList<Speaker>();
     }
@@ -108,30 +100,6 @@ public class Event {
         this.room = room;
     }
 
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
-    }
-
-    public Lecture getLecture() {
-        return lecture;
-    }
-
-    public void setLecture(Lecture lecture) {
-        this.lecture = lecture;
-    }
-
-    public Discussion getDiscussion() {
-        return discussion;
-    }
-
-    public void setDiscussion(Discussion discussion) {
-        this.discussion = discussion;
-    }
-
     public List<Attendee> getAttendees() {
         return attendees;
     }
@@ -156,4 +124,27 @@ public class Event {
         this.speakers.add(speaker);
     }
 
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
+
+    public int getAgeRating() {
+        return ageRating;
+    }
+
+    public void setAgeRating(int ageRating) {
+        this.ageRating = ageRating;
+    }
+
+    public int getRunTime() {
+        return runTime;
+    }
+
+    public void setRunTime(int runTime) {
+        this.runTime = runTime;
+    }
 }

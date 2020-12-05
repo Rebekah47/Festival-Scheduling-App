@@ -37,6 +37,9 @@ public class DataLoader implements ApplicationRunner {
   @Autowired
   EventRepo eventRepo;
 
+  @Autowired
+  EventTypeRepo eventTypeRepo;
+
   public DataLoader(){}
 
   public void run(ApplicationArguments args){
@@ -62,22 +65,13 @@ public class DataLoader implements ApplicationRunner {
     Festival marvel = new Festival("Marvel Cinematic Universe", localDate2, 5);
     festivalRepo.save(marvel);
 
-    Room lotrFilms = new Room("Main Theatre", 60, lotr);
-    roomRepo.save(lotrFilms);
-    Room lotrInDepth = new Room("Pop Up", 20, lotr);
-    roomRepo.save(lotrInDepth);
-    Room panels = new Room("Main Auditorium", 350, lotr);
-    roomRepo.save(panels);
-    Room noRoomL = new Room("All Guests", 900, lotr);
-    roomRepo.save(noRoomL);
-    Room marvelFilms = new Room("Stan Lee's World", 200, marvel);
-    roomRepo.save(marvelFilms);
-    Room meetMarvel = new Room("The Attic", 30, marvel);
-    roomRepo.save(meetMarvel);
-    Room fanMade = new Room("Fan Made", 45, marvel);
-    roomRepo.save(fanMade);
-    Room noRoomM = new Room("All Guests", 900, marvel);
-    roomRepo.save(noRoomM);
+    Room One = new Room("Main Theatre", 60, lotr);
+    roomRepo.save(One);
+    Room Two = new Room("Pop Up", 20, lotr);
+    roomRepo.save(Two);
+    Room Three = new Room("Main Auditorium", 350, lotr);
+    roomRepo.save(Three);
+
 
     Speaker speaker1 = new Speaker("Ian McKellen", "test_url", "test_headshot", "test requirements");
     speakerRepo.save(speaker1);
@@ -115,56 +109,33 @@ public class DataLoader implements ApplicationRunner {
     Attendee attendee8 = new Attendee("Murray Morrison", 51, "test requirement");
     attendeeRepo.save(attendee8);
 
-    Discussion blankDiscussion = new Discussion("", 0);
-    discussionRepo.save(blankDiscussion);
-    Discussion lotrStarting = new Discussion("How it all started - LotR", 90);
-    discussionRepo.save(lotrStarting);
-    Discussion ironManDiscuss = new Discussion("Meet Tony Stark and others", 60);
-    discussionRepo.save(ironManDiscuss);
+    EventType film = new EventType("Film");
+    EventType lecture = new EventType("Lecture");
+    EventType discussion = new EventType("Discussion");
 
-    Lecture blankLecture = new Lecture("", 0);
-    lectureRepo.save(blankLecture);
-    Lecture lotrEffects = new Lecture("How we did it - LotR", 150);
-    lectureRepo.save(lotrEffects);
-    Lecture taika = new Lecture("The man behind Ragnarok", 60);
-    lectureRepo.save(taika);
-
-    Film blankFilm = new Film("", 0, 0);
-    filmRepo.save(blankFilm);
-    Film lotr1 = new Film("The Fellowship of the Ring", 12, 240);
-    filmRepo.save(lotr1);
-    Film lotr2 = new Film("The Two Towers", 12, 240);
-    filmRepo.save(lotr2);
-    Film lotr3 = new Film("The Return of the King", 12, 240);
-    filmRepo.save(lotr3);
-    Film ragnarok = new Film("Thor: Ragnarok", 12, 150);
-    filmRepo.save(ragnarok);
-    Film ironMan = new Film("Iron Man", 12, 135);
-    filmRepo.save(ironMan);
-
-    Event event1 = new Event("How it all started", localDateTime4, lotrInDepth, blankFilm, lotrStarting, blankLecture);
+    Event event1 = new Event("How it all started", localDateTime4, One, film, 0, 160 );
     eventRepo.save(event1);
-    Event event2 = new Event("How it all started", localDateTime5, lotrInDepth, blankFilm, lotrStarting, blankLecture);
+    Event event2 = new Event("How it all started", localDateTime5, Two, lecture, 18, 60);
     eventRepo.save(event2);
-    Event event3 = new Event("Trilogy 1", localDateTime1, lotrFilms, lotr1, blankDiscussion, blankLecture);
+    Event event3 = new Event("Trilogy 1", localDateTime1, Three,discussion, 18, 120 );
     eventRepo.save(event3);
-    Event event4 = new Event("Trilogy 2", localDateTime2, lotrFilms, lotr2, blankDiscussion, blankLecture);
+    Event event4 = new Event("Trilogy 2", localDateTime2, One, film, 0, 160 );
     eventRepo.save(event4);
-    Event event5 = new Event("Trilogy 3", localDateTime3, lotrFilms, lotr3, blankDiscussion, blankLecture);
+    Event event5 = new Event("Trilogy 3", localDateTime3, Two, lecture, 18, 60);
     eventRepo.save(event5);
-    Event event6 = new Event("How its made", localDateTime2, panels, blankFilm, blankDiscussion, lotrEffects);
+    Event event6 = new Event("How its made", localDateTime2, Three, discussion, 18, 120 );
     eventRepo.save(event6);
-    Event blankEventLotr = new Event("All Guests and speakers", localDateTime10, noRoomL, blankFilm, blankDiscussion, blankLecture);
+    Event blankEventLotr = new Event("All Guests and speakers", localDateTime10, One, film, 0, 160 );
     eventRepo.save(blankEventLotr);
-    Event event7 = new Event("Ragnarok before Speech", localDateTime6, marvelFilms, ragnarok, blankDiscussion, blankLecture);
+    Event event7 = new Event("Ragnarok before Speech", localDateTime6, Two, lecture, 18, 60);
     eventRepo.save(event7);
-    Event event8 = new Event("Iron Man before Q&A", localDateTime7, marvelFilms, ironMan, blankDiscussion, blankLecture);
+    Event event8 = new Event("Iron Man before Q&A", localDateTime7, Three, discussion, 18, 120 );
     eventRepo.save(event8);
-    Event event9 = new Event("Q&A Iron Man", localDateTime8, meetMarvel, blankFilm, ironManDiscuss, blankLecture);
+    Event event9 = new Event("Q&A Iron Man", localDateTime8, One, film, 0, 160 );
     eventRepo.save(event9);
-    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, meetMarvel, blankFilm, blankDiscussion, taika);
+    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, Two , film, 0, 160 );
     eventRepo.save(event10);
-    Event blankEventMarvel = new Event("All Guests and speakers", localDateTime11, noRoomM, blankFilm, blankDiscussion, blankLecture);
+    Event blankEventMarvel = new Event("All Guests and speakers", localDateTime11, Three, discussion, 18, 120 );
     eventRepo.save(blankEventMarvel);
 
     blankEventLotr.addAttendee(attendee1);
