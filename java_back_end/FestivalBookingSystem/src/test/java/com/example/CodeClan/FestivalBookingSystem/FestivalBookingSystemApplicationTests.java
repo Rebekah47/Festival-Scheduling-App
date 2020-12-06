@@ -46,7 +46,8 @@ class FestivalBookingSystemApplicationTests {
 //	@Test
 //	public void addThings(){
 //		LocalDate localDate = LocalDate.of(2020, 12, 4);
-//		Festival festival = new Festival("test festival", localDate, 5);
+//		LocalDate localDate2 = LocalDate.of(2020, 12, 5);
+//		Festival festival = new Festival("test festival", localDate, localDate2);
 //		festivalRepo.save(festival);
 //
 //		Room room = new Room("test room", 5, festival);

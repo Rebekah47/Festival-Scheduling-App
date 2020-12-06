@@ -1,16 +1,9 @@
 import React from 'react';
 
 const NavBar = (props) => {
-<<<<<<< HEAD
-    return (
-      <header>
-          <li>I am a link</li>
-      </header>
-    )
-  }
-=======
+
     return(
-        <header className="navBar">
+        <div className="side-bar">
             <ul>
                 <li className="navLink">
                     <a href="/">Home</a>
@@ -19,9 +12,8 @@ const NavBar = (props) => {
                     <a href="/festivals">Festivals</a>
                 </li>
             </ul>
-        </header>
+        </div>
     )
 }
->>>>>>> d9806a7... created front end app, can call festivals
 
 export default NavBar;

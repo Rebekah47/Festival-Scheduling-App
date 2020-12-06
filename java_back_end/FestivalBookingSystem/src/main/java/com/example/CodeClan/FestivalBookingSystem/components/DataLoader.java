@@ -45,7 +45,9 @@ public class DataLoader implements ApplicationRunner {
   public void run(ApplicationArguments args){
 
     LocalDate localDate1 = LocalDate.of(2020, 9, 17);
-    LocalDate localDate2 = LocalDate.of(2020, 12, 4);
+    LocalDate localDate2 = LocalDate.of(2020, 9, 22);
+    LocalDate localDate3 = LocalDate.of(2020, 12, 1);
+    LocalDate localDate4 = LocalDate.of(2020, 12, 8);
 
     LocalDateTime localDateTime1 = LocalDateTime.of(2020, 9, 17, 12, 30);
     LocalDateTime localDateTime2 = LocalDateTime.of(2020, 9, 17, 16, 30);
@@ -56,22 +58,27 @@ public class DataLoader implements ApplicationRunner {
     LocalDateTime localDateTime7 = LocalDateTime.of(2020, 12, 4, 17, 0);
     LocalDateTime localDateTime8 = LocalDateTime.of(2020, 12, 5, 10, 30);
     LocalDateTime localDateTime9 = LocalDateTime.of(2020, 12, 5, 11, 30);
-    LocalDateTime localDateTime10 = LocalDateTime.of(2020, 9, 17, 0, 00);
-    LocalDateTime localDateTime11 = LocalDateTime.of(2020, 12, 4, 0, 00);
+    LocalDateTime localDateTime10 = LocalDateTime.of(2020, 9, 17, 0, 0);
+    LocalDateTime localDateTime11 = LocalDateTime.of(2020, 12, 4, 0, 0);
 
 
-    Festival lotr = new Festival("Lord of the Rings", localDate1, 2);
+    Festival lotr = new Festival("Serious Tolkein Points", localDate1, localDate2);
     festivalRepo.save(lotr);
-    Festival marvel = new Festival("Marvel Cinematic Universe", localDate2, 5);
+    Festival marvel = new Festival("Marvel Cinematic Universe", localDate3, localDate4);
     festivalRepo.save(marvel);
 
+    Room Four = new Room("Attending", 900, lotr);
+    roomRepo.save(Four);
+    Room Five = new Room("Attending", 600, marvel);
+    roomRepo.save(Five);
     Room One = new Room("Main Theatre", 60, lotr);
     roomRepo.save(One);
     Room Two = new Room("Pop Up", 20, lotr);
     roomRepo.save(Two);
     Room Three = new Room("Main Auditorium", 350, lotr);
     roomRepo.save(Three);
-
+    Room Six = new Room("Marvelous", 200, marvel);
+    roomRepo.save(Six);
 
     Speaker speaker1 = new Speaker("Ian McKellen", "test_url", "test_headshot", "test requirements");
     speakerRepo.save(speaker1);
@@ -109,6 +116,8 @@ public class DataLoader implements ApplicationRunner {
     Attendee attendee8 = new Attendee("Murray Morrison", 51, "test requirement");
     attendeeRepo.save(attendee8);
 
+    EventType attending = new EventType("Attending");
+    eventTypeRepo.save(attending);
     EventType film = new EventType("Film");
     eventTypeRepo.save(film);
     EventType lecture = new EventType("Lecture");
@@ -116,30 +125,32 @@ public class DataLoader implements ApplicationRunner {
     EventType discussion = new EventType("Discussion");
     eventTypeRepo.save(discussion);
 
-    Event event1 = new Event("How it all started", localDateTime4, One, film, 0, 160 );
-    eventRepo.save(event1);
-    Event event2 = new Event("How it all started", localDateTime5, Two, lecture, 18, 60);
-    eventRepo.save(event2);
-    Event event3 = new Event("Trilogy 1", localDateTime1, Three,discussion, 18, 120 );
-    eventRepo.save(event3);
-    Event event4 = new Event("Trilogy 2", localDateTime2, One, film, 0, 160 );
-    eventRepo.save(event4);
-    Event event5 = new Event("Trilogy 3", localDateTime3, Two, lecture, 18, 60);
-    eventRepo.save(event5);
-    Event event6 = new Event("How its made", localDateTime2, Three, discussion, 18, 120 );
-    eventRepo.save(event6);
-    Event blankEventLotr = new Event("All Guests and speakers", localDateTime10, One, film, 0, 160 );
+    Event blankEventLotr = new Event("Attending", localDateTime10, Four, attending, 0, 0 );
     eventRepo.save(blankEventLotr);
-    Event event7 = new Event("Ragnarok before Speech", localDateTime6, Two, lecture, 18, 60);
-    eventRepo.save(event7);
-    Event event8 = new Event("Iron Man before Q&A", localDateTime7, Three, discussion, 18, 120 );
-    eventRepo.save(event8);
-    Event event9 = new Event("Q&A Iron Man", localDateTime8, One, film, 0, 160 );
-    eventRepo.save(event9);
-    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, Two , film, 0, 160 );
-    eventRepo.save(event10);
-    Event blankEventMarvel = new Event("All Guests and speakers", localDateTime11, Three, discussion, 18, 120 );
+    Event event1 = new Event("How it all started", localDateTime4, Two, discussion, 12, 90 );
+    eventRepo.save(event1);
+    Event event2 = new Event("How it all started", localDateTime5, Two, discussion, 12, 90);
+    eventRepo.save(event2);
+    Event event3 = new Event("Trilogy 1", localDateTime1, One, film, 12, 240 );
+    eventRepo.save(event3);
+    Event event4 = new Event("Trilogy 2", localDateTime2, One, film, 12, 240 );
+    eventRepo.save(event4);
+    Event event5 = new Event("Trilogy 3", localDateTime3, One, film, 12, 240);
+    eventRepo.save(event5);
+    Event event6 = new Event("How its made", localDateTime2, Three, lecture, 15, 120 );
+    eventRepo.save(event6);
+
+    Event blankEventMarvel = new Event("Attending", localDateTime11, Five, attending, 18, 0 );
     eventRepo.save(blankEventMarvel);
+    Event event7 = new Event("Ragnarok before Speech", localDateTime6, Six, film, 18, 150);
+    eventRepo.save(event7);
+    Event event8 = new Event("Iron Man before Q&A", localDateTime7, Six, film, 18, 135);
+    eventRepo.save(event8);
+    Event event9 = new Event("Q&A Iron Man", localDateTime8, Six, discussion, 0, 60 );
+    eventRepo.save(event9);
+    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, Six , lecture, 0, 60 );
+    eventRepo.save(event10);
+
 
     blankEventLotr.addAttendee(attendee1);
     blankEventLotr.addAttendee(attendee2);
@@ -196,7 +207,6 @@ public class DataLoader implements ApplicationRunner {
     attendee8.addEvent(event7);
     attendee8.addEvent(event10);
     attendeeRepo.save(attendee8);
-
 
   }
 

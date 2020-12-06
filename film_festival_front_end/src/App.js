@@ -1,26 +1,25 @@
-<<<<<<< HEAD
-import React from'react';
-import MainContainer from './containers/MainContainer'
-import './App.css';
-
-
-function App() {
-  return (
-    <div className="App">
-      <MainContainer/>
-    </div>
-=======
 import React from 'react';
-import MainContainer from './containers/MainContainer'
+import MainContainer from './containers/MainContainer.js';
+import NavBar from './components/NavBar.js'
+
+import './App.css';
 
 const App = () => {
 
 
   return (
     <>
-    <MainContainer />
+      <header>
+        <h1>Festival Tracker</h1>
+      </header>
+      <main>
+        <NavBar/>
+        <MainContainer />
+      </main>
+      <footer>
+        <h3>This is the footer</h3>
+      </footer>
     </>
->>>>>>> d9806a7... created front end app, can call festivals
   );
   }
 export default App;

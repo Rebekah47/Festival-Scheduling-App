@@ -1,5 +1,5 @@
 import React from 'react';
-import Festival from './Festival.js'
+import {Link} from 'react-router-dom';
 
 const FestivalList = ({festivals}) => {
 
@@ -9,15 +9,32 @@ const FestivalList = ({festivals}) => {
 
   const festivalNodes = festivals.map((festival, index) => {
     return(
-        <li key={index} className="festival-item">
-          <Festival festival={festival}/>
-        </li>
+      <tr key={index}>
+        <td>
+          <Link to={"/festivals/" + festival.id} >
+            {festival.name}
+          </Link>
+        </td>
+        <td>{festival.startDate}</td>
+        <td>{festival.endDate}</td>
+      </tr>
     )
   })
 
   return(
     <>
-      {festivalNodes}
+    <h1>Festivals</h1>
+    <table>
+      <tbody>
+        <tr>
+          <th></th>
+          <th>Start Date</th>
+          <th>End Date</th>
+        </tr>
+        {festivalNodes}
+      </tbody>
+    </table>
+    <Link to="/festivals/new">Create New</Link>
     </>
   )
 }

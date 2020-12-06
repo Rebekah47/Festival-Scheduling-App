@@ -1,0 +1,39 @@
+header {
+  background: rgb(150, 0, 255);
+  color: antiquewhite;
+  padding: 1px 20px;
+  font-size: 24px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+footer {
+  background-color: rgb(150, 0, 255);
+  color: antiquewhite;
+  padding: 1px;
+  text-align: center;
+}
+
+.side-bar {
+  background-color: lightblue;
+  min-height: 820px;
+}
+
+.main-container {
+  padding: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+table {
+  margin: 20px 10px;
+}
+
+table > tr > td {
+  padding: 10px;
+}

@@ -21,8 +21,8 @@ public class Festival {
     @Column(name="start_date")
     private LocalDate startDate;
 
-    @Column(name="no_days")
-    private int noDays;
+    @Column(name="end_date")
+    private LocalDate endDate;
 
     @JsonIgnoreProperties({"festival"})
     @OneToMany(mappedBy="festival", cascade=CascadeType.ALL)
@@ -37,10 +37,10 @@ public class Festival {
 //    private List<Attendee> attendees;
 
 
-    public Festival(String name, LocalDate startDate, int noDays) {
+    public Festival(String name, LocalDate startDate, LocalDate endDate) {
         this.name = name;
         this.startDate = startDate;
-        this.noDays = noDays;
+        this.endDate = endDate;
         this.rooms = new ArrayList<Room>();
 //        this.speakers = new ArrayList<Speaker>();
 //        this.attendees = new ArrayList<Attendee>();
@@ -73,12 +73,12 @@ public class Festival {
         this.startDate = startDate;
     }
 
-    public int getNoDays() {
-        return noDays;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setNoDays(int noDays) {
-        this.noDays = noDays;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public List<Room> getRooms() {
