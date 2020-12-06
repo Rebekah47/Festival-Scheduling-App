@@ -4,32 +4,21 @@ import Request from '../helpers/Request';
 import FestivalList from '../components/festivals/FestivalList.js'
 import FestivalDetail from '../components/festivals/FestivalDetail.js'
 import FestivalForm from '../components/festivals/FestivalForm.js'
+import PageNotFound from '../components/PageNotFound.js'
 
 
 
 const FestivalContainer = () => {
 
     const [festivals, setFestivals] = useState([]);
-    // const [attendees, setAttendees] = useState([]);
-    // const [events, setEvents] = useState([]);
-    // const [rooms, setRooms] = useState([]);
-    // const [speakers, setSpeakers] = useState([]);
 
     const requestAll = function(){
         const request = new Request();
         const festivalPromise = request.get('/api/festivals')
-        // const attendeePromise = request.get('/api/attendees')
-        // const speakerPromise = request.get('/api/speakers')
-        // const eventPromise = request.get('/api/events')
-        // const roomPromise = request.get('/api/rooms')
     
-        Promise.all([festivalPromise]) //, attendeePromise, eventPromise, roomPromise, speakerPromise])
+        Promise.all([festivalPromise])
         .then((data) => {
             setFestivals(data[0])
-            // setAttendees(data[1]);
-            // setEvents(data[2]);
-            // setRooms(data[3]);
-            // setSpeakers(data[4]);
         })
 
     }
@@ -76,9 +65,11 @@ const FestivalContainer = () => {
                     return <FestivalDetail festival={festival} />
                 }} />
 
-                <Route render={() => {
+                <Route exact path="/festivals" render={() => {
                     return <FestivalList festivals={festivals}/>
                 }} />
+
+                <Route component={PageNotFound}/>
 
             </Switch>
         </Router>

@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class RoomController {
 
@@ -16,10 +18,18 @@ public class RoomController {
   @GetMapping(value = "/rooms/{id}")
   public ResponseEntity getRoom(@PathVariable Long id){ return new ResponseEntity(roomRepo.findById(id), HttpStatus.OK); }
 
+  @GetMapping(value="/festivals/{id}/rooms")
+  public ResponseEntity<List<Room>> getRooms(@PathVariable Long id){ return new ResponseEntity<>(roomRepo.findRoomsByFestivalId(id), HttpStatus.OK); }
+
   @PatchMapping(value = "/rooms/{id}")
   public ResponseEntity<Room> updateRoom(@RequestBody Room room){
     roomRepo.save(room);
     return new ResponseEntity<>(room, HttpStatus.OK);
   }
 
+  @PostMapping(value = "/rooms")
+  public ResponseEntity<Room> postPirate(@RequestBody Room room){
+    roomRepo.save(room);
+    return new ResponseEntity<>(room, HttpStatus.CREATED);
+  }
 }

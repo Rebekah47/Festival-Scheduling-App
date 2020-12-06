@@ -65,4 +65,4 @@ const EventDetail = ({event, rooms, onDelete, onUpdate}) => {
   )
 }
 
-export default AttendeeDetail;
+export default EventDetail;

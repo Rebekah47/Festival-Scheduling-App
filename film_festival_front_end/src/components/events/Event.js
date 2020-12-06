@@ -23,4 +23,4 @@ const Event = ({event}) => {
   )
 }
 
-export default Pirate;
+export default Event;

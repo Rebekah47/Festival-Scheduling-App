@@ -20,4 +20,4 @@ const Attendee = ({attendee}) => {
   )
 }
 
-export default Pirate;
+export default Attendee;

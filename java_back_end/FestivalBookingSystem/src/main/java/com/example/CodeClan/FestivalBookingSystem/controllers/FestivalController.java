@@ -34,6 +34,9 @@ public class FestivalController {
   @GetMapping(value="/festivals")
   public ResponseEntity<List<Festival>> getFestivals(){ return new ResponseEntity<>(festivalRepo.findAll(), HttpStatus.OK); }
 
+  @GetMapping(value = "/festivals/{id}")
+  public ResponseEntity getFestival(@PathVariable Long id){ return new ResponseEntity(festivalRepo.findById(id), HttpStatus.OK); }
+
   @GetMapping(value="/festivals/{id}/speakers")
   public ResponseEntity<List<Speaker>> getSpeakersForFestival(@PathVariable Long id){
     return new ResponseEntity<>(speakerRepo.findDistinctSpeakersByEventsRoomFestivalId(id), HttpStatus.OK);
