@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './Festival.css'
 
 const FestivalDetail = ({festival}) => {
 
@@ -31,7 +32,7 @@ const FestivalDetail = ({festival}) => {
 
   return(
     <>
-      <h2>{festival.name}</h2>
+      <h2 className="title">{festival.name}</h2>
       <table className="festival-deets">
         <tbody>
           <tr>
@@ -60,7 +61,9 @@ const FestivalDetail = ({festival}) => {
           </tr>
         </tbody>
       </table>
-      <Link to="/festivals">&lt; Back</Link><Link to={editUrl}>Edit</Link>
+      <Link style={{ textDecoration: 'none' }} className="button" to={editUrl}>Edit</Link>
+      <br></br>
+      <Link style={{ textDecoration: 'none' }} className="button" to="/festivals">&lt; Back</Link>
     </>
   )
 

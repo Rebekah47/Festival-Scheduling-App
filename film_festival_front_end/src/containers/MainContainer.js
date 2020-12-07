@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import FestivalContainer from './FestivalContainer';
 import Home from '../components/Home.js'
 import PageNotFound from '../components/PageNotFound.js'
+import './MainContainer.css'
 
 
 const MainContainer = () => {

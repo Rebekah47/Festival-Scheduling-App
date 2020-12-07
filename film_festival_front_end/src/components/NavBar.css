@@ -1,0 +1,13 @@
+.navLink{
+    font-size: 200%;
+}
+
+ul {
+    list-style: none;
+  }
+
+.side-bar {
+    border: 5px solid rgb(39, 39, 108);
+background-color: white;
+min-height: 820px;
+}

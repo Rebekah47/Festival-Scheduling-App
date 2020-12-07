@@ -1,0 +1,92 @@
+.title {
+    font-size: 300%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.festival-deets {
+    vertical-align: middle;
+    font-size: 200%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.date{
+    padding: 20px;;
+}
+
+.table{
+    display: block;
+    margin-left: 27%;
+    margin-right: 33%;
+    width: 100%;
+}
+
+.festivalwrap{
+    font-size: 150%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 15px;
+}
+.festivalwrap:hover{
+    background-color: rgb(69,69,230);  
+}
+
+.button{
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.button:hover{
+    background-color: rgb(232, 232, 189);  
+}
+
+input{
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+.input:hover{
+    background-color:  rgb(125, 125, 233);  
+}
+
+label{
+    text-align: center;
+    color: white;
+    font-size: large;
+    background-color: blue;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+.button:hover{
+    background-color: rgb(232, 232, 189);  
+}
+
+

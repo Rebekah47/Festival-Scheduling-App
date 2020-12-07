@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './Festival.css'
 
 const FestivalForm = ({festival, onUpdate, onCreate}) => {
 
@@ -59,9 +60,9 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
 
   return (
     <>
-      <h3>{heading}</h3>
+      <h3 className="title">{heading}</h3>
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
+        <label>Name</label>
         <input 
           type="text"
           placeholder="festival name"
@@ -69,8 +70,8 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
           onChange={handleChange}
           value={stateFestival.name}
           required
-        />
-        <label>Start Date:</label>
+        /><br></br>
+        <label>Start</label>
         <input
         type="date"
         name="startDate"
@@ -78,8 +79,8 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
         value={stateFestival.startDate}
         required
         max={stateFestival.endDate}
-        />
-        <label>End Date:</label>
+        /><br></br>
+        <label>End</label>
         <input
         type="date"
         name="endDate"
@@ -87,16 +88,16 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
         value={stateFestival.endDate}
         required
         min={stateFestival.startDate}
-        />
-        <label>Capacity:</label>
+        /><br></br>
+        <label>Capacity</label>
         <input
         type="number"
         name="capacity"
         onChange={handleCapacityChange}
         required
         value={stateCapacity}
-        />
-        <button type="submit">Save</button>
+        /><br></br>
+        <button style={{ textDecoration: 'none' }} className="button" type="submit">Save</button>
       </form>
     </>
   )
