@@ -4,18 +4,34 @@ import com.example.CodeClan.FestivalBookingSystem.repositories.EventRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
+@RestController
 public class EventController {
     @Autowired
     EventRepo eventRepo;
-    @GetMapping(value="/events")
-    public ResponseEntity<List<Event>> getEvents(){ return new ResponseEntity<>(eventRepo.findAll(), HttpStatus.OK); }
-    @PostMapping(value="/events")
+    @GetMapping("/events")
+    public ResponseEntity<List<Event>> getAllEvents(){
+        return new ResponseEntity<>(eventRepo.findAll(), HttpStatus.OK);
+    }
+    @GetMapping(value = "/events/{id}")
+    public ResponseEntity getEvent(@PathVariable Long id){
+        return new ResponseEntity<>(eventRepo.findById(id), HttpStatus.OK);
+    }
+    @PostMapping(value = "/events")
     public ResponseEntity<Event> postEvent(@RequestBody Event event){
         eventRepo.save(event);
         return new ResponseEntity<>(event, HttpStatus.CREATED);
+    }
+    @PatchMapping(value = "/events/{id}")
+    public ResponseEntity<Event> updateEvent(@RequestBody Event event){
+        eventRepo.save(event);
+        return new ResponseEntity<>(event, HttpStatus.OK);
+    }
+    @DeleteMapping(value = "/events/{id}")
+    public ResponseEntity<Event> deleteEvent(@PathVariable Long id) {
+        Event found = eventRepo.getOne(id);
+        eventRepo.delete(found);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
