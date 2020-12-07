@@ -1,8 +1,11 @@
 import React from 'react';
 import Event from "./Event";
-import {Link} from 'react-router-dom';const EventDetail = ({oneEvent}) => {    if (!oneEvent){
+import {Link} from 'react-router-dom';const EventDetail = ({oneEvent}) => {    
+  
+  if (!oneEvent){
       return "Loading..."
-    }    return(
+    }    
+    return(
       <h1>I am an Event</h1>
     )}
     

@@ -5,6 +5,8 @@ import Home from '../components/Home.js'
 import PageNotFound from '../components/PageNotFound.js'
 import RoomContainer from './RoomContainer.js';
 import EventContainer from './EventContainer';
+import AttendeeContainer from './AttendeeContainer';
+import SpeakerContainer from './SpeakerContainer';
 
 
 const MainContainer = () => {
@@ -17,6 +19,8 @@ const MainContainer = () => {
                 <Route exact path="/festivals" component={FestivalContainer} />
                 <Route exact path="/rooms/festival/:id" component={RoomContainer} />
                 <Route exact path="/events" component={EventContainer}/>
+                <Route exact path="/attendees" component={AttendeeContainer}/>
+                <Route exact path="/speakers" component={SpeakerContainer}/>
                 <Route component={PageNotFound}/>
             </Switch>
         </div>
