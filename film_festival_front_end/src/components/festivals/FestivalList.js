@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './Festival.css'
 
 const FestivalList = ({festivals}) => {
 
@@ -10,31 +11,31 @@ const FestivalList = ({festivals}) => {
   const festivalNodes = festivals.map((festival, index) => {
     return(
       <tr key={index}>
+        <td className="date">{festival.startDate}</td>
         <td>
-          <Link to={"/festivals/" + festival.id} >
+          <Link style={{ textDecoration: 'none' }} className="festivalwrap" to={"/festivals/" + festival.id} >
             {festival.name}
           </Link>
         </td>
-        <td>{festival.startDate}</td>
-        <td>{festival.endDate}</td>
+        <td className="date">{festival.endDate}</td>
       </tr>
     )
   })
 
   return(
     <>
-    <h1>Festivals</h1>
-    <table>
+    <h1 className="title">Festival</h1>
+    <table className="table">
       <tbody>
         <tr>
-          <th></th>
           <th>Start Date</th>
+          <th></th>
           <th>End Date</th>
         </tr>
         {festivalNodes}
       </tbody>
     </table>
-    <Link to="/festivals/new">Create New</Link>
+    <Link style={{ textDecoration: 'none' }} className="button" to="/festivals/new">Create</Link>
     </>
   )
 }

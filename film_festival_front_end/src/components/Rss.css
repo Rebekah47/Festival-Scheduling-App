@@ -1,0 +1,10 @@
+
+.rss-bar {
+border: 5px solid rgb(39, 39, 108);
+background-color: white;
+min-height: 820px;
+}
+
+.nss-bar:hover{
+    transform: scale(1.1);
+}

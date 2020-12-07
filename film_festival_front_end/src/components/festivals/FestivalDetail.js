@@ -65,7 +65,9 @@ const FestivalDetail = ({festival}) => {
           </tr>
         </tbody>
       </table>
-      <Link to="/festivals">&lt; Back</Link><Link to={editUrl}>Edit</Link>
+      <Link style={{ textDecoration: 'none' }} className="button" to={editUrl}>Edit</Link>
+      <br></br>
+      <Link style={{ textDecoration: 'none' }} className="button" to="/festivals">&lt; Back</Link>
     </>
   )
 
