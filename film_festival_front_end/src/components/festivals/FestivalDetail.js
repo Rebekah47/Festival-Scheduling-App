@@ -52,19 +52,19 @@ const FestivalDetail = ({festival}) => {
           </tr>
           <tr>
             <td>Rooms:</td>
-            <td><Link to={roomUrl}>Link</Link></td>
+            <td><Link to={roomUrl}>List Rooms</Link></td>
           </tr>
           <tr>
             <td>Events:</td>
-            <td><Link to={eventUrl}>Link</Link></td>
+            <td><Link to={eventUrl}>List of Events</Link></td>
           </tr>
           <tr>
             <td>Guests:</td>
-            <td><Link to={guestUrl}>Link</Link></td>
+            <td><Link to={guestUrl}>List of Guest Attending</Link></td>
           </tr>
           <tr>
             <td>Speakers:</td>
-            <td><Link to={speakerUrl}>Link</Link></td>
+            <td><Link to={speakerUrl}>List of Speakers</Link></td>
           </tr>
         </tbody>
       </table>
