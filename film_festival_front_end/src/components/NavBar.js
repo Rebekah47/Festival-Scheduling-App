@@ -24,6 +24,10 @@ const NavBar = (props) => {
                 <li className="navLink">
                     <a style={{ textDecoration: 'none' }} href="/attendees"><FontAwesomeIcon icon={faVideo}/> Guests</a>
                 </li>
+                <li className="navLink">
+                    <a style={{ textDecoration: 'none' }} href="/diary"><FontAwesomeIcon icon={faVideo}/> Diary</a>
+                </li>
+
             </ul>
         </div>
     )

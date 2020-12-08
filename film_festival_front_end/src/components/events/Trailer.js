@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 const Trailer = ({trailerLink}) => {
     if (!trailerLink)
     return (
-        <p>Trailer Not Found</p>
+        <p></p>
     )
     else{
         return(
