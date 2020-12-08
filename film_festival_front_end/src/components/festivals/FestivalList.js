@@ -38,7 +38,7 @@ const FestivalList = ({festivals}) => {
       </tbody>
     </table>
     <Link style={{ textDecoration: 'none' }} className="festivalActionButton" to="/festivals/new">Create</Link>
-    <button><SearchContainer objects={festivals}/></button>
+    <SearchContainer objects={festivals}/>
     </>
   )
 }

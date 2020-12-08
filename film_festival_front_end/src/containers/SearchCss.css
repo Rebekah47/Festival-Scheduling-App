@@ -1,9 +1,13 @@
-input {
+.searchHeading{
+    font-weight: 100;
+}
+
+.searchInput {
     width:200px;
 }
-label {
+.searchLabel {
     width:250px;
 }
-.container{
+.searchcontainer{
     text-align: center;
 }

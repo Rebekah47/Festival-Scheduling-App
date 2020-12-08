@@ -43,7 +43,7 @@ const RoomList = ({rooms, festival}) => {
         </tbody>
       </table>
       <Link to={`/festivals/${festival.id}/rooms/new`}>Create New</Link>
-      <button><SearchContainer objects={rooms}/></button>
+      <SearchContainer objects={rooms}/>
     </>
   )
 }

@@ -81,7 +81,7 @@ const EventList = ({events, extraUrl}) => {
 			<div className="trailer">			
 			<Trailer classname="trailer" trailerLink={trailer}/>
 			</div>
-			<button><SearchContainer objects={events}/></button>
+			<SearchContainer objects={events}/>
 		
 		</>
 	)

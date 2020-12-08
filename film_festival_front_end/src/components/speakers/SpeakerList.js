@@ -35,7 +35,7 @@ const SpeakerList = ({speakers, extraUrl}) => {
 	  	  {speakersNodes}
 	  	</ul>
 			{checkLink}
-			<button><SearchContainer objects={speakers}/></button>
+			<SearchContainer objects={speakers}/>
 		</>
 	)
 }

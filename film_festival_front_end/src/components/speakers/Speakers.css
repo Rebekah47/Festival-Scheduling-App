@@ -34,7 +34,7 @@
  }
 .speakersButtonWrap:hover{
     transform: scale(1.1);
-    background-color: rgb(69,69,230); 
+    background-color: rgb(111, 77, 179); 
     border: 5px solid black; 
 }
 

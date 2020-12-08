@@ -11,10 +11,10 @@ const App = () => {
   return (
     <>
       <header>
-      <div class="tcontainer"><div class="ticker-wrap"><div class="ticker-move">
-      <div class="ticker-item">CodeClan2020</div>
-        <div class="ticker-item">Film Festival Tracker</div>
-        <div class="ticker-item">CodeClan2020</div>
+      <div className="tcontainer"><div class="ticker-wrap"><div className="ticker-move">
+      <div className="ticker-item">CodeClan2020</div>
+        <div className="ticker-item">Film Festival Tracker</div>
+        <div className="ticker-item">CodeClan2020</div>
       </div></div></div>
       </header>
       <main>

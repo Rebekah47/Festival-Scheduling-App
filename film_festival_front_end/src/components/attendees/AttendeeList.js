@@ -37,7 +37,7 @@ const AttendeeList = ({attendees, extraUrl}) => {
 	  	  {attendeesNodes}
 	  	</ul>
 			{checkLink}
-			<button><SearchContainer objects={attendees}/></button>
+		<SearchContainer objects={attendees}/>
 		</>
 	)
 }

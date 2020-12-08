@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './SearchCss.css';
 const SearchContainer = ({objects}) => {
-    console.log(objects)
     const [stateSearch, setStateSearch] = useState(
        {
            name: ""
@@ -26,12 +25,12 @@ const SearchContainer = ({objects}) => {
             }
         })
         return (
-            <div className="container">
-                <h2 className="heading">Search</h2>
-                <label className="search-label" htmlFor="search-input">
+            <>
+            <br></br>
+                <label className="searchLabel">
                     <input
                         name="name"
-                        className="search"
+                        className="searchInput"
                         type="text"
                         defaultValue=""
                         placeholder="Search..."
@@ -40,7 +39,7 @@ const SearchContainer = ({objects}) => {
                     <FontAwesomeIcon icon={faSearch}/>
                 </label>
                 {results}
-            </div>
+            </>
             )
 }
 export default SearchContainer;
