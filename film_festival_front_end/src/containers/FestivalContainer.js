@@ -11,6 +11,7 @@ import EventForm from '../components/events/EventForm.js'
 import AttendeeList from '../components/attendees/AttendeeList.js'
 import SpeakerList from '../components/speakers/SpeakerList.js'
 import PageNotFound from '../components/PageNotFound.js'
+import SearchContainer from './SearchContainer';
 
 
 
@@ -201,6 +202,13 @@ const FestivalContainer = () => {
                 }} />
 
                 <Route component={PageNotFound}/>
+
+                <Route render={()=>{
+                    return <SearchContainer festivals={festivals} rooms={rooms} events={events} attendees={attendees} speakers={speakers} />
+
+                }}
+                />
+
 
             </Switch>
         </Router>

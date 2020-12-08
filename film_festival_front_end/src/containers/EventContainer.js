@@ -5,6 +5,7 @@ import EventList from '../components/events/EventList.js'
 import EventForm from '../components/events/EventForm.js'
 
 
+
 const EventContainer = () => {
 
 
@@ -55,7 +56,7 @@ const EventContainer = () => {
     return(
         <Router>
             <Switch>
-
+            
                 <Route exact path="/events/:id/edit" render={(props) => {
                     const id = props.match.params.id;
                     const event = findEventById(id);
@@ -68,7 +69,8 @@ const EventContainer = () => {
 
                 <Route exact path="/events" render={() => {
                     return <EventList events={events}/>
-                }}/>     
+                }}/>  
+                 
 
             </Switch>
         </Router>

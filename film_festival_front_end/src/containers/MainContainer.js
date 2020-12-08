@@ -6,6 +6,7 @@ import PageNotFound from '../components/PageNotFound.js'
 import EventContainer from './EventContainer';
 import AttendeeContainer from './AttendeeContainer';
 import SpeakerContainer from './SpeakerContainer';
+import SearchContainer from './SearchContainer';
 
 
 const MainContainer = () => {
@@ -19,6 +20,7 @@ const MainContainer = () => {
                 <Route exact path="/events" component={EventContainer}/>
                 <Route exact path="/attendees" component={AttendeeContainer}/>
                 <Route exact path="/speakers" component={SpeakerContainer}/>
+                <Route exact path="/search" component={SearchContainer}/>  
                 <Route component={PageNotFound}/>
             </Switch>
         </div>
