@@ -8,7 +8,8 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
     name:"",
     room:null,
     startTime:"",
-    runTime:0
+    runTime:0,
+    trailerLink:""
   })
 
   const [stateFestivalId, setStateFestivalId] = useState(0)
@@ -30,6 +31,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
         room:event.room,
         startTime:event.startTime,
         runTime:event.runTime,
+        trailerLink:event.trailerLink,
         id:event.id
       };
       setStateEvent(currentEvent);
@@ -154,6 +156,13 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="runTime"
           onChange={handleChange}
           value={stateEvent.runTime}
+        />
+        <label>Preview Link:</label>
+        <input
+          type="text"
+          name="trailerLink"
+          onChange={handleChange}
+          value={stateEvent.trailerLink}
         />
         <label>Event Type:</label>
         <select name="eventType" onChange={handleEventType} defaultValue={findEventTypeIndex() || 'select event type'}>
