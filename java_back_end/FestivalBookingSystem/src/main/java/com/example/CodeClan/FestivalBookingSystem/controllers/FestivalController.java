@@ -60,7 +60,7 @@ public class FestivalController {
     roomRepo.save(room);
     EventType eventType = eventTypeRepo.findById(1L).get();
     LocalDateTime localDateTime = festival.getStartDate().atStartOfDay();
-    Event event = new Event("Attending", localDateTime, room, eventType, 0, 0 );
+    Event event = new Event("Attending", localDateTime, room, eventType, 0, 0, "trailer" );
     eventRepo.save(event);
 
     return new ResponseEntity<>(festival, HttpStatus.CREATED);

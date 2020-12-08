@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import Trailer from './Trailer.js'
 
 const EventList = ({events, extraUrl}) => {
+
+	const [trailer, setTrailer] = useState("");
 	
 	if (events.length === 0){
 	  return (<p>Loading...</p>)
@@ -22,8 +25,15 @@ const EventList = ({events, extraUrl}) => {
 			return `/events/new`
 		}
 	}
+
+	const handleClick = (url) => {
+		setTrailer(url)
+
+	}
 	
 	const eventsNodes = events.map((event, index) => {
+
+		const trailerLink = event.trailerLink;
 
 		if (event.eventType.type !== "Attending"){
 			return(
@@ -35,11 +45,14 @@ const EventList = ({events, extraUrl}) => {
 					<th>{event.startTime.substring(11, 16)}</th>
 					<td>{event.eventType.type}</td>
 					<th>{event.runTime}</th>
+					<td><button onClick={() => {handleClick(event.trailerLink)}}>Click for Preview</button></td>
 					<td><Link to={getEditUrl(event.id)}>edit</Link></td>
 				</tr>
 			)
 		} else {
-			return null
+			return (
+			null
+			)
 		}
 
 	})	
@@ -57,11 +70,14 @@ const EventList = ({events, extraUrl}) => {
 						<th>Start Time</th>
 						<th>Type of Event</th>
 						<th>Run Time</th>
+						<th>Trailer</th>
 					</tr>
 					{eventsNodes}
 				</tbody>
 			</table>
 			<Link to={getNewUrl}>Create New</Link>
+			<Trailer trailerLink={trailer}/>
+		
 		</>
 	)
 }

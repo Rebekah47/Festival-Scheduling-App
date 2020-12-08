@@ -67,17 +67,17 @@ public class DataLoader implements ApplicationRunner {
     Festival marvel = new Festival("Marvel Cinematic Universe", localDate3, localDate4);
     festivalRepo.save(marvel);
 
-    Room Four = new Room("Attending", 900, lotr);
+    Room Four = new Room("Room Four", 900, lotr);
     roomRepo.save(Four);
-    Room Five = new Room("Attending", 600, marvel);
+    Room Five = new Room("Room Five", 600, marvel);
     roomRepo.save(Five);
-    Room One = new Room("Main Theatre", 60, lotr);
+    Room One = new Room("Room One", 60, lotr);
     roomRepo.save(One);
-    Room Two = new Room("Pop Up", 20, lotr);
+    Room Two = new Room("Room Two", 20, lotr);
     roomRepo.save(Two);
-    Room Three = new Room("Main Auditorium", 350, lotr);
+    Room Three = new Room("Room Three", 350, lotr);
     roomRepo.save(Three);
-    Room Six = new Room("Marvelous", 200, marvel);
+    Room Six = new Room("Room Six", 200, marvel);
     roomRepo.save(Six);
 
     Speaker speaker1 = new Speaker("Ian McKellen", "test_url", "test_headshot", "test requirements");
@@ -125,30 +125,30 @@ public class DataLoader implements ApplicationRunner {
     EventType discussion = new EventType("Discussion");
     eventTypeRepo.save(discussion);
 
-    Event blankEventLotr = new Event("Attending", localDateTime10, Four, attending, 0, 0 );
+    Event blankEventLotr = new Event("Attending", localDateTime10, Four, attending, 0, 0, "https://www.youtube.com/watch?v=V75dMMIW2B4" );
     eventRepo.save(blankEventLotr);
-    Event event1 = new Event("How it all started", localDateTime4, Two, discussion, 12, 90 );
+    Event event1 = new Event("How it all started", localDateTime4, Two, discussion, 12, 90, "https://www.youtube.com/watch?v=CRbWibte7L8" );
     eventRepo.save(event1);
-    Event event2 = new Event("How it all started", localDateTime5, Two, discussion, 12, 90);
+    Event event2 = new Event("How it all started", localDateTime5, Two, discussion, 12, 90, "https://www.youtube.com/watch?v=CRbWibte7L8");
     eventRepo.save(event2);
-    Event event3 = new Event("Trilogy 1", localDateTime1, One, film, 12, 240 );
+    Event event3 = new Event("Trilogy 1", localDateTime1, One, film, 12, 240, "https://www.youtube.com/watch?v=V75dMMIW2B4" );
     eventRepo.save(event3);
-    Event event4 = new Event("Trilogy 2", localDateTime2, One, film, 12, 240 );
+    Event event4 = new Event("Trilogy 2", localDateTime2, One, film, 12, 240, "https://www.youtube.com/watch?v=LbfMDwc4azU" );
     eventRepo.save(event4);
-    Event event5 = new Event("Trilogy 3", localDateTime3, One, film, 12, 240);
+    Event event5 = new Event("Trilogy 3", localDateTime3, One, film, 12, 240, "https://www.youtube.com/watch?v=r5X-hFf6Bwo");
     eventRepo.save(event5);
-    Event event6 = new Event("How its made", localDateTime2, Three, lecture, 15, 120 );
+    Event event6 = new Event("How its made", localDateTime2, Three, lecture, 15, 120, "https://www.youtube.com/watch?v=CRbWibte7L8" );
     eventRepo.save(event6);
 
-    Event blankEventMarvel = new Event("Attending", localDateTime11, Five, attending, 18, 0 );
+    Event blankEventMarvel = new Event("Attending", localDateTime11, Five, attending, 18, 0, "https://www.youtube.com/watch?v=V75dMMIW2B4" );
     eventRepo.save(blankEventMarvel);
-    Event event7 = new Event("Ragnarok before Speech", localDateTime6, Six, film, 18, 150);
+    Event event7 = new Event("Ragnarok before Speech", localDateTime6, Six, film, 18, 150, "https://www.youtube.com/watch?v=7H9AaiBLHCo");
     eventRepo.save(event7);
-    Event event8 = new Event("Iron Man before Q&A", localDateTime7, Six, film, 18, 135);
+    Event event8 = new Event("Iron Man before Q&A", localDateTime7, Six, film, 18, 135, "https://www.youtube.com/watch?v=8ugaeA-nMTc");
     eventRepo.save(event8);
-    Event event9 = new Event("Q&A Iron Man", localDateTime8, Six, discussion, 0, 60 );
+    Event event9 = new Event("Q&A Iron Man", localDateTime8, Six, discussion, 0, 60, "https://www.youtube.com/watch?v=NuKYG4iKnko" );
     eventRepo.save(event9);
-    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, Six , lecture, 0, 60 );
+    Event event10 = new Event("Do you know who Taika Waititi is?", localDateTime9, Six , lecture, 0, 60, "https://www.youtube.com/watch?v=1tEVctSY-0Q" );
     eventRepo.save(event10);
 
 

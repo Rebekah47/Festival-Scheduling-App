@@ -14,6 +14,9 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="trailerLink")
+    private String trailerLink;
+
     @Column(name="name")
     private String name;
 
@@ -54,7 +57,7 @@ public class Event {
     )
     private List<Speaker> speakers;
 
-    public Event(String name, LocalDateTime startTime, Room room, EventType eventType, int ageRating, int runTime) {
+    public Event(String name, LocalDateTime startTime, Room room, EventType eventType, int ageRating, int runTime, String trailerLink) {
         this.name = name;
         this.startTime = startTime;
         this.ageRating = ageRating;
@@ -63,9 +66,18 @@ public class Event {
         this.eventType = eventType;
         this.attendees = new ArrayList<Attendee>();
         this.speakers = new ArrayList<Speaker>();
+        this.trailerLink = trailerLink;
     }
 
     public Event() {
+    }
+
+    public String getTrailerLink() {
+        return trailerLink;
+    }
+
+    public void setTrailerLink(String trailerLink) {
+        this.trailerLink = trailerLink;
     }
 
     public Long getId() {
