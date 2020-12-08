@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import SearchContainer from '../../containers/SearchContainer.js';
 
 const RoomList = ({rooms, festival}) => {
 
@@ -42,6 +43,7 @@ const RoomList = ({rooms, festival}) => {
         </tbody>
       </table>
       <Link to={`/festivals/${festival.id}/rooms/new`}>Create New</Link>
+      <button><SearchContainer objects={rooms}/></button>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Trailer from './Trailer.js'
+import SearchContainer from '../../containers/SearchContainer.js';
 
 const EventList = ({events, extraUrl}) => {
 
@@ -77,6 +78,7 @@ const EventList = ({events, extraUrl}) => {
 			</table>
 			<Link to={getNewUrl}>Create New</Link>
 			<Trailer trailerLink={trailer}/>
+			<button><SearchContainer objects={events}/></button>
 		
 		</>
 	)

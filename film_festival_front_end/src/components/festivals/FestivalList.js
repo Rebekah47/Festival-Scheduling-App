@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Festival.css'
+import SearchContainer from '../../containers/SearchContainer.js';
 // import Calender from './Calender.js';
 
 const FestivalList = ({festivals}) => {
@@ -37,7 +38,7 @@ const FestivalList = ({festivals}) => {
       </tbody>
     </table>
     <Link style={{ textDecoration: 'none' }} className="button" to="/festivals/new">Create</Link>
-    {/* <Calender /> */}
+    <button><SearchContainer objects={festivals}/></button>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Attendee from './Attendee.js';
 import {Link} from 'react-router-dom';
+import SearchContainer from '../../containers/SearchContainer.js';
 
 
 const AttendeeList = ({attendees, extraUrl}) => {
@@ -34,6 +35,7 @@ const AttendeeList = ({attendees, extraUrl}) => {
 	  	  {attendeesNodes}
 	  	</ul>
 			{checkLink}
+			<button><SearchContainer objects={attendees}/></button>
 		</>
 	)
 }

@@ -1,0 +1,9 @@
+input {
+    width:200px;
+}
+label {
+    width:250px;
+}
+.container{
+    text-align: center;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Speaker from './Speaker.js';
 import {Link} from 'react-router-dom';
-
+import SearchContainer from '../../containers/SearchContainer.js';
 
 const SpeakerList = ({speakers, extraUrl}) => {
 
@@ -34,6 +34,7 @@ const SpeakerList = ({speakers, extraUrl}) => {
 	  	  {speakersNodes}
 	  	</ul>
 			{checkLink}
+			<button><SearchContainer objects={speakers}/></button>
 		</>
 	)
 }
