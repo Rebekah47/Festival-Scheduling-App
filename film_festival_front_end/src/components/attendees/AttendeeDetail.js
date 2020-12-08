@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 const AttendeeDetail = ({attendee}) => {
   
 
-    if (!attendee){
-      return "Loading..."
-    }
+  if (!attendee){
+    return "Loading..."
+  }
 
   return (
     <>

@@ -3,19 +3,29 @@ import Speaker from './Speaker.js';
 import {Link} from 'react-router-dom';
 
 
-const SpeakerList = ({speakers}) => {
+const SpeakerList = ({speakers, extraUrl}) => {
 
 	if (speakers.length === 0){
 	  return (<p>Loading...</p>)
 	}
 
 	const speakersNodes = speakers.map((speaker, index) => {
-	  return (
-	    <li key={index} className="component-item">
-	    	<Speaker speaker={speaker} />
-	    </li>
-	  )
+		if (extraUrl){
+			return (
+				<li key={index} className="component-item">
+					{speaker.name}
+				</li>
+			)
+		} else {
+			return (
+				<li key={index} className="component-item">
+					<Speaker speaker={speaker} />
+				</li>
+			)
+		}
 	})
+
+	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : <Link to="/speakers/new">Add New</Link>
 
 	return (
 		<>
@@ -23,7 +33,7 @@ const SpeakerList = ({speakers}) => {
 	  	<ul className="component-list">
 	  	  {speakersNodes}
 	  	</ul>
-			<Link to="/speakers/new">Add New</Link>
+			{checkLink}
 		</>
 	)
 }

@@ -3,19 +3,29 @@ import Attendee from './Attendee.js';
 import {Link} from 'react-router-dom';
 
 
-const AttendeeList = ({attendees}) => {
+const AttendeeList = ({attendees, extraUrl}) => {
 
 	if (attendees.length === 0){
 	  return (<p>Loading...</p>)
 	}
 
 	const attendeesNodes = attendees.map((attendee, index) => {
-	  return (
-	    <li key={index} className="component-item">
-	    	<Attendee attendee={attendee} />
-	    </li>
-	  )
+		if (extraUrl){
+			return (
+				<li key={index} className="component-item">
+					{attendee.name}
+				</li>
+			)
+		} else {
+			return (
+				<li key={index} className="component-item">
+					<Attendee attendee={attendee}/>
+				</li>
+			)
+		}
 	})
+
+	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : <Link to="/attendees/new">Add New</Link>
 
 	return (
 		<>
@@ -23,8 +33,9 @@ const AttendeeList = ({attendees}) => {
 	  	<ul className="component-list">
 	  	  {attendeesNodes}
 	  	</ul>
-			<Link to="/attendees/new">Add New</Link>
+			{checkLink}
 		</>
 	)
 }
+
  export default AttendeeList;

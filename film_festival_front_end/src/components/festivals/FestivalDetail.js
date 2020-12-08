@@ -27,8 +27,11 @@ const FestivalDetail = ({festival}) => {
     return dateString
   }
 
-  const editUrl = "/festivals/" + festival.id +"/edit";
-  const roomUrl = "/rooms/festival/" + festival.id;
+  const editUrl = "/festivals/" + festival.id + "/edit";
+  const roomUrl = "/festivals/" + festival.id + "/rooms";
+  const eventUrl = "/festivals/" + festival.id + "/events";
+  const guestUrl = '/festivals/' + festival.id + "/attendees";
+  const speakerUrl = '/festivals/' + festival.id + "/speakers";
 
   return(
     <>
@@ -49,19 +52,19 @@ const FestivalDetail = ({festival}) => {
           </tr>
           <tr>
             <td>Rooms:</td>
-            <td><a href={roomUrl}>Link</a></td>
+            <td><Link to={roomUrl}>Link</Link></td>
           </tr>
           <tr>
             <td>Events:</td>
-            <td>Link</td>
+            <td><Link to={eventUrl}>Link</Link></td>
           </tr>
           <tr>
             <td>Guests:</td>
-            <td>Link</td>
+            <td><Link to={guestUrl}>Link</Link></td>
           </tr>
           <tr>
             <td>Speakers:</td>
-            <td>Link</td>
+            <td><Link to={speakerUrl}>Link</Link></td>
           </tr>
         </tbody>
       </table>

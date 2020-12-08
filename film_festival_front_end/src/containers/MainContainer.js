@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import FestivalContainer from './FestivalContainer';
 import Home from '../components/Home.js'
 import PageNotFound from '../components/PageNotFound.js'
-import RoomContainer from './RoomContainer.js';
 import EventContainer from './EventContainer';
 import AttendeeContainer from './AttendeeContainer';
 import SpeakerContainer from './SpeakerContainer';
@@ -17,7 +16,6 @@ const MainContainer = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/festivals" component={FestivalContainer} />
-                <Route exact path="/rooms/festival/:id" component={RoomContainer} />
                 <Route exact path="/events" component={EventContainer}/>
                 <Route exact path="/attendees" component={AttendeeContainer}/>
                 <Route exact path="/speakers" component={SpeakerContainer}/>

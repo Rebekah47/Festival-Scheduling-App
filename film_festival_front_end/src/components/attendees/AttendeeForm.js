@@ -6,7 +6,7 @@ const AttendeeForm = ({attendee, onCreate, onUpdate}) => {
     {
       name: "",
       age: 0,
-      access_regs: ""
+      accessibilityRequirements: ""
     }
   )
 

@@ -14,7 +14,7 @@ const RoomList = ({rooms, festival}) => {
           <td>{room.name} - Link</td>
           <th>{room.capacity}</th>
           <th>{room.events.length}</th>
-          <td><Link to={`/rooms/festival/${festival.id}/room/${room.id}/edit`}>Edit</Link></td>
+          <td><Link to={`/festivals/${festival.id}/rooms/${room.id}/edit`}>Edit</Link></td>
         </tr>
       )
     } else {
@@ -41,7 +41,7 @@ const RoomList = ({rooms, festival}) => {
           {roomNodes}
         </tbody>
       </table>
-      <Link to={`/rooms/festival/${festival.id}/new`}>Create New</Link>
+      <Link to={`/festivals/${festival.id}/rooms/new`}>Create New</Link>
     </>
   )
 }
