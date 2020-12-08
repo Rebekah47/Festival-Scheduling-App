@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Festival.css'
-import Calender from './Calender.js';
+// import Calender from './Calender.js';
 
 const FestivalList = ({festivals}) => {
 

@@ -2,34 +2,26 @@ import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../helpers/Request';
 import SpeakerList from '../components/speakers/SpeakerList.js';
-import FestivalDetail from '../components/festivals/FestivalDetail';
 import SpeakerDetail from '../components/speakers/SpeakerDetail';
+import SpeakerForm from '../components/speakers/SpeakerForm';
 
 
 const SpeakerContainer = () => {
 
-    const [festivals, setFestivals] = useState([]);
     const [speakers, setSpeakers] = useState([]);
-    const [events, setEvents] = useState([]);
 
 
     const requestAll = function(){
         const request = new Request();
-        const festivalPromise = request.get('/api/festivals')
         const speakerPromise = request.get('/api/speakers')
-        const eventPromise = request.get('/api/events')
-        
 
-        Promise.all([festivalPromise, speakerPromise, eventPromise])
+        Promise.all([speakerPromise])
         .then((data) => {
-            setFestivals(data[0])
-            setSpeakers(data[1])
-            setEvents(data[2])
+            setSpeakers(data[0])
         })
 
     }
 
-    console.log(speakers);
 
     useEffect(() => {
         requestAll()
@@ -41,17 +33,42 @@ const SpeakerContainer = () => {
         })
     }
 
+    const handleUpdate = function(speaker){
+      const request = new Request();
+      request.patch("/api/speakers/" + speaker.id, speaker)
+      .then(() => window.location='/speakers');
+    }
+
+    const handlePost = function(speaker){
+      const request = new Request();
+      request.post("/api/speakers", speaker)
+      .then(() => window.location='/speakers');
+    }
+
     return (
         <Router>
             <Switch>
-                <Route exact path="/speakers" render={() => {
-                    return <SpeakerList speakers={speakers} festivals={festivals} events={events}/>
+
+                <Route exact path="/speakers/new" render={() => {
+                    return <SpeakerForm onCreate={handlePost} />
                 }} />
-                <Route exact path="speakers/:id" render={(props) => {
+
+                <Route exact path="/speakers/:id/edit" render={(props) => {
+                    const id = props.match.params.id;
+                    const speaker = findSpeakerById(id);
+                    return <SpeakerForm speaker={speaker} onUpdate={handleUpdate}/>
+                }} />
+
+                <Route exact path="/speakers" render={() => {
+                    return <SpeakerList speakers={speakers}/>
+                }} />
+
+                <Route exact path="/speakers/:id" render={(props) => {
                     const id = props.match.params.id;
                     const speaker = findSpeakerById(id);
                     return <SpeakerDetail speaker={speaker}/>
                 }} />
+
             </Switch>
         </Router>
     )

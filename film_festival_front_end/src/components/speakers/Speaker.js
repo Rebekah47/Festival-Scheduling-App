@@ -7,15 +7,16 @@ const Speaker = ({speaker}) => {
     return "Loading..."
   }
 
-  const url = "/speaker/" + speaker.id;
+  const url = "/speakers/" + speaker.id;
 
   return (
     <>
     <Link to = {url} className="name">
-    {speaker.name}
+      {speaker.name}
     </Link>
     </>
   )
+
 }
 
 export default Speaker;

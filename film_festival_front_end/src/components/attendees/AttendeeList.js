@@ -1,5 +1,6 @@
 import React from 'react';
 import Attendee from './Attendee.js';
+import {Link} from 'react-router-dom';
 
 
 const AttendeeList = ({attendees}) => {
@@ -11,17 +12,19 @@ const AttendeeList = ({attendees}) => {
 	const attendeesNodes = attendees.map((attendee, index) => {
 	  return (
 	    <li key={index} className="component-item">
-	    <div className="component">
-	    <Attendee attendee={attendee} />
-	    </div>
+	    	<Attendee attendee={attendee} />
 	    </li>
 	  )
 	})
 
 	return (
-	  <ul className="component-list">
-	    {attendeesNodes}
-	  </ul>
+		<>
+			<h3>All Attendees</h3>
+	  	<ul className="component-list">
+	  	  {attendeesNodes}
+	  	</ul>
+			<Link to="/attendees/new">Add New</Link>
+		</>
 	)
 }
  export default AttendeeList;

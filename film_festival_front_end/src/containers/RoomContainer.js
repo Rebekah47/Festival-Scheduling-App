@@ -11,20 +11,20 @@ const RoomContainer = (props) => {
 
   const [rooms, setRooms] = useState([]);
   const [festival, setFestival] = useState({});
-  const [allFestivals, setAllFestivals] = useState({});
+
 
 
   const requestAll = function(){
     const request = new Request();
     const festivalPromise = request.get(`/api/festivals/${festivalId}`)
-    const allFestivalsPromise = request.get(`/api/festivals`)
+
     
 
-    Promise.all([festivalPromise, allFestivalsPromise])
+    Promise.all([festivalPromise])
     .then((data) => {
       setRooms(data[0].rooms)
       setFestival(data[0])
-      setAllFestivals(data[1])
+
     })
   }
 

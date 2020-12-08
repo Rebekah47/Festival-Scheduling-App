@@ -8,7 +8,7 @@ const RoomList = ({rooms, festival}) => {
   }
 
   const roomNodes = rooms.map((room, index) => {
-    if (index != 0){
+    if (index !== 0){
       return(
         <tr key={index}>
           <td>{room.name} - Link</td>

@@ -1,5 +1,6 @@
 package com.example.CodeClan.FestivalBookingSystem.controllers;
 
+import com.example.CodeClan.FestivalBookingSystem.models.EventType;
 import com.example.CodeClan.FestivalBookingSystem.models.Room;
 import com.example.CodeClan.FestivalBookingSystem.repositories.RoomRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class RoomController {
 
   @Autowired
   RoomRepo roomRepo;
+
+  @GetMapping(value="/rooms")
+  public ResponseEntity<List<Room>> getRooms(){ return new ResponseEntity<>(roomRepo.findAll(), HttpStatus.OK); }
 
   @GetMapping(value = "/rooms/{id}")
   public ResponseEntity getRoom(@PathVariable Long id){ return new ResponseEntity(roomRepo.findById(id), HttpStatus.OK); }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Speaker from './Speaker.js';
+import {Link} from 'react-router-dom';
 
 
 const SpeakerList = ({speakers}) => {
@@ -11,17 +12,19 @@ const SpeakerList = ({speakers}) => {
 	const speakersNodes = speakers.map((speaker, index) => {
 	  return (
 	    <li key={index} className="component-item">
-	    <div className="component">
-	    <Speaker speaker={speaker} />
-	    </div>
+	    	<Speaker speaker={speaker} />
 	    </li>
 	  )
 	})
 
 	return (
-	  <ul className="component-list">
-	    {speakersNodes}
-	  </ul>
+		<>
+			<h3>All Speakers</h3>
+	  	<ul className="component-list">
+	  	  {speakersNodes}
+	  	</ul>
+			<Link to="/speakers/new">Add New</Link>
+		</>
 	)
 }
  export default SpeakerList;

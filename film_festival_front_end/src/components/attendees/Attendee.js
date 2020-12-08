@@ -7,15 +7,13 @@ const Attendee = ({attendee}) => {
     return "Loading..."
   }
 
-  const url = "/attendee/" + attendee.id;
+  const url = "/attendees/" + attendee.id;
 
   return (
     <>
     <Link to = {url} className="name">
-    {attendee.name}
+      {attendee.name}
     </Link>
-    <p>Age: {attendee.age}</p>
-    <p>Access: {attendee.access_regs}</p>
     </>
   )
 }
