@@ -11,7 +11,7 @@ const RoomList = ({rooms, festival}) => {
     if (index !== 0){
       return(
         <tr key={index}>
-          <td>{room.name} - Link</td>
+          <td>{room.name}</td>
           <th>{room.capacity}</th>
           <th>{room.events.length}</th>
           <td><Link to={`/festivals/${festival.id}/rooms/${room.id}/edit`}>Edit</Link></td>
@@ -20,7 +20,7 @@ const RoomList = ({rooms, festival}) => {
     } else {
       return(
         <tr key={index}>
-          <td>Full Festival - Link</td>
+          <td>Full Festival</td>
           <th>{room.capacity}</th>
           <th>All Events</th>
         </tr>
