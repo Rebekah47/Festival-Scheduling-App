@@ -13,21 +13,21 @@ const FestivalList = ({festivals}) => {
   const festivalNodes = festivals.map((festival, index) => {
     return(
       <tr key={index}>
-        <td className="date">{festival.startDate}</td>
+        <td className="festivalDate">{festival.startDate}</td>
         <td>
-          <Link style={{ textDecoration: 'none' }} className="festivalwrap" to={"/festivals/" + festival.id} >
+          <Link style={{ textDecoration: 'none' }} className="festivalButtonWrap" to={"/festivals/" + festival.id} >
             {festival.name}
           </Link>
         </td>
-        <td className="date">{festival.endDate}</td>
+        <td className="festivalDate">{festival.endDate}</td>
       </tr>
     )
   })
 
   return(
     <>
-    <h1 className="title">Festival</h1>
-    <table className="table">
+    <h1 className="festivalTitle">Festival</h1>
+    <table className="festivalTable">
       <tbody>
         <tr>
           <th>Start Date</th>
@@ -37,7 +37,7 @@ const FestivalList = ({festivals}) => {
         {festivalNodes}
       </tbody>
     </table>
-    <Link style={{ textDecoration: 'none' }} className="button" to="/festivals/new">Create</Link>
+    <Link style={{ textDecoration: 'none' }} className="festivalActionButton" to="/festivals/new">Create</Link>
     <button><SearchContainer objects={festivals}/></button>
     </>
   )

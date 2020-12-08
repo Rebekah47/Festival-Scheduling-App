@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 const AttendeeForm = ({attendee, onCreate, onUpdate}) => {
 
@@ -13,7 +14,7 @@ const AttendeeForm = ({attendee, onCreate, onUpdate}) => {
   let heading = "";
 
   if(!attendee){
-    heading = "create attendee"
+    heading = "Create Attendee"
   } else {
     heading = "edit - " + attendee.name
   }
@@ -44,30 +45,37 @@ const AttendeeForm = ({attendee, onCreate, onUpdate}) => {
 
   return(
     <>
-    <h3>{heading}</h3>
+    <h3 className="attendeeTitle">{heading}</h3>
     <form onSubmit={handleSubmit}>
-    <input 
+    <label>Name</label>
+    <input
       type="text" 
       placeholder="Name" 
       name="name" 
       onChange={handleChange} 
-      value={stateAttendee.name} 
+      value={stateAttendee.name}
+      required
     />
+    <label>Age</label>
     <input 
       type="number" 
       placeholder="Age" 
       name="age" 
       onChange={handleChange} 
       value={stateAttendee.age}
+      required
     />
+    <label>Accessibility Requirements</label>
     <input 
       type="text"
       placeholder="Accessibility Requirements"
       name="accessibilityRequirements"
       onChange={handleChange}
       value={stateAttendee.accessibilityRequirements}
+      required
     /> 
-    <button type="submit">Save</button>
+    <button style={{ textDecoration: 'none' }} className="attendeeActionButton" type="submit">Save</button>
+    <Link style={{ textDecoration: 'none' }} className="attendeeActionButton" to="/attendees">&lt; Back</Link>
     </form>
     </>
   )

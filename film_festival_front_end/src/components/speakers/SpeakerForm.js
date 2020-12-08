@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 
 const SpeakerForm = ({speaker, onUpdate, onCreate}) => {
 
@@ -12,7 +13,7 @@ const SpeakerForm = ({speaker, onUpdate, onCreate}) => {
   let heading = "";
 
   if(!speaker){
-    heading = "create speaker"
+    heading = "Create Speaker"
   } else {
     heading = "edit - " + speaker.name
   }
@@ -42,37 +43,46 @@ const SpeakerForm = ({speaker, onUpdate, onCreate}) => {
 
   return (
     <>
-      <h3>{heading}</h3>
+      <h3 className="speakersTitle">{heading}</h3>
       <form onSubmit={handleSubmit}>
+      <label>Name</label>
         <input 
           type="text"
           placeholder="name"
           name="name"
           onChange={handleChange}
           value={stateSpeaker.name}
+          required
         />
+        <label>HeadShot URL</label>
         <input 
           type="text"
           placeholder="HeadShot Url"
           name="headShot"
           onChange={handleChange}
           value={stateSpeaker.headShot}
+          required
         />
+        <label>WebSite URL</label>
         <input 
           type="text"
           placeholder="Web Url"
           name="webUrl"
           onChange={handleChange}
           value={stateSpeaker.webUrl}
+          required
         />
+        <label>Accessibility Requirements</label>
         <input 
           type="text"
           placeholder="Accessibility Requirements"
           name="accessibilityRequirements"
           onChange={handleChange}
           value={stateSpeaker.accessibilityRequirements}
+          required
         />
-        <button type="submit">Save</button>
+        <button className="speakersActionButton" type="submit">Save</button>
+        <Link style={{ textDecoration: 'none' }} className="speakersActionButton" to="/speakers">&lt; Back</Link>
       </form>
     </>
   )

@@ -1,0 +1,90 @@
+.eventsTitle {
+    font-size: 300%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.eventsButtonWrap{
+    font-size: 100%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: 5px solid rgb(111, 77, 179);
+    border-radius: 15px;
+}
+.eventsButtonWrap:hover{
+    transform: scale(1.1);
+    background-color: rgb(111, 77, 179); 
+    border: 5px solid black; 
+}
+
+.eventsTable{
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 100%;
+}
+
+.eventsActionButton{
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+.eventsActionButton:hover{
+    transform: scale(1.1);
+    background-color: rgb(232, 232, 189);  
+}
+
+.bold{
+    font-weight: 900;
+}
+
+.trailer {
+    width: 500px;
+    height: 300px;
+    margin-left: 27%;
+}
+
+label{
+    text-align: center;
+    color: white;
+    font-size: large;
+    background-color: rgb(111, 77, 179) ;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+input, select{
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+
+
+

@@ -9,24 +9,26 @@ const SpeakerDetail = ({speaker}) => {
 
   return (
     <>
-      <h2>{speaker.name}</h2>
-      <table>
+      <h2 className="speakersTitle">{speaker.name}</h2>
+      <table className="speakersTable2">
         <tbody>
           <tr>
-            <td>website url:</td>
-            <td>{speaker.webUrl}</td>
+            <label className="speakersLabel">Website URL:</label>
+            <a href={speaker.webUrl}>{speaker.webUrl}</a>
           </tr>
           <tr>
-            <td>headshot url:</td>
-            <td>{speaker.headShot}</td>
+            <label className="speakersLabel">Headshot URL:</label>
+            <a href={speaker.headShot}>{speaker.headShot}</a>
           </tr>
           <tr>
-            <td>Accessibility Requirements</td>
-            <td>{speaker.accessibilityRequirements}</td>
+            <label className="speakersLabel">Accessibility Requirements</label>
+            <p>{speaker.accessibilityRequirements}</p>
           </tr>
         </tbody>
       </table>
-      <Link to={`/speakers/${speaker.id}/edit`}>Edit</Link>
+      <Link style={{ textDecoration: 'none' }} className="speakersActionButton" to={`/speakers/${speaker.id}/edit`}>Edit</Link>
+      <Link style={{ textDecoration: 'none' }} className="speakersActionButton" to="/speakers">&lt; Back</Link>
+      
     </>
   )
 

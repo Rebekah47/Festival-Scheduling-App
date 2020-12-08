@@ -2,6 +2,7 @@ import React from 'react';
 import Speaker from './Speaker.js';
 import {Link} from 'react-router-dom';
 import SearchContainer from '../../containers/SearchContainer.js';
+import './Speakers.css';
 
 const SpeakerList = ({speakers, extraUrl}) => {
 
@@ -12,25 +13,25 @@ const SpeakerList = ({speakers, extraUrl}) => {
 	const speakersNodes = speakers.map((speaker, index) => {
 		if (extraUrl){
 			return (
-				<li key={index} className="component-item">
+				<Link style={{ textDecoration: 'none' }} className="speakersButtonWrap" color="white">
 					{speaker.name}
-				</li>
+				</Link>
 			)
 		} else {
 			return (
-				<li key={index} className="component-item">
-					<Speaker speaker={speaker} />
-				</li>
+				<Link key={index} style={{ textDecoration: 'none' }} className="speakersButtonWrap" color="white">
+					<Speaker style={{ textDecoration: 'none' }} className="speakersButtonWrap" color="white" speaker={speaker} />
+				</Link>
 			)
 		}
 	})
 
-	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : <Link to="/speakers/new">Add New</Link>
+	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : <Link style={{ textDecoration: 'none' }} className="speakersActionButton" to="/speakers/new">Add New</Link>
 
 	return (
 		<>
-			<h3>All Speakers</h3>
-	  	<ul className="component-list">
+			<h3 className="speakersTitle">All Speakers</h3>
+	  	<ul className="speakersTable">
 	  	  {speakersNodes}
 	  	</ul>
 			{checkLink}

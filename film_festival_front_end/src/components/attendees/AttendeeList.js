@@ -2,6 +2,7 @@ import React from 'react';
 import Attendee from './Attendee.js';
 import {Link} from 'react-router-dom';
 import SearchContainer from '../../containers/SearchContainer.js';
+import './Attendee.css';
 
 
 const AttendeeList = ({attendees, extraUrl}) => {
@@ -13,25 +14,26 @@ const AttendeeList = ({attendees, extraUrl}) => {
 	const attendeesNodes = attendees.map((attendee, index) => {
 		if (extraUrl){
 			return (
-				<li key={index} className="component-item">
+				<Link key={index} style={{ textDecoration: 'none' }} className="attendeeButtonWrap">
 					{attendee.name}
-				</li>
+				</Link>
 			)
 		} else {
 			return (
-				<li key={index} className="component-item">
+				<Link key={index} style={{ textDecoration: 'none' }} className="attendeeButtonWrap">
 					<Attendee attendee={attendee}/>
-				</li>
+				</Link>
 			)
 		}
 	})
 
-	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : <Link to="/attendees/new">Add New</Link>
+	const checkLink = extraUrl ? <Link to={extraUrl}>Back</Link> : 
+	<Link style={{ textDecoration: 'none' }} className="attendeeActionButton" to="/attendees/new">Add New</Link>
 
 	return (
 		<>
-			<h3>All Attendees</h3>
-	  	<ul className="component-list">
+			<h3 className="attendeeTitle">All Attendees</h3>
+	  	<ul className="attendeeTable">
 	  	  {attendeesNodes}
 	  	</ul>
 			{checkLink}

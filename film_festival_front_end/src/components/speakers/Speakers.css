@@ -1,0 +1,83 @@
+.speakersTitle {
+    font-size: 300%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.speakersTable{
+    display: block;
+    margin-left: 37%;
+    margin-right: 37%;
+    width: 20%;
+}
+
+.speakersTable2{
+    display: block;
+    margin-left: 43%;
+    width: 100%;
+}
+
+.speakersButtonWrap{
+    margin:10px;
+    color:black;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: white;
+    border: 5px solid rgb(111, 77, 179);
+    border-radius: 15px;
+ }
+.speakersButtonWrap:hover{
+    transform: scale(1.1);
+    background-color: rgb(69,69,230); 
+    border: 5px solid black; 
+}
+
+.speakersActionButton{
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+.speakersActionButton:hover{
+    transform: scale(1.1);
+    background-color: rgb(232, 232, 189);  
+}
+
+label{
+    text-align: center;
+    color: white;
+    font-size: large;
+    background-color: rgb(111, 77, 179) ;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13%;
+}
+
+.speakersLabel{
+    text-align: center;
+    color: white;
+    font-size: large;
+    background-color: rgb(111, 77, 179) ;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-.festivalTitle {
+.attendeeTitle {
     font-size: 300%;
     text-align: center;
     display: block;
@@ -6,45 +6,28 @@
     margin-right: auto;
     width: 80%;
 }
-.festivalDetails {
+.attendeeDetails {
     vertical-align: middle;
-    font-size: 150%;
+    font-size: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
 
-.festivalDate{
+.attendeeDate{
     padding: 20px;;
 }
 
-.festivalTable{
+.attendeeTable{
     display: block;
-    margin-left: 30%;
+    margin-left: 32%;
     margin-right: 30%;
-    width: 100%;
+    width: 30%;
 }
 
-.festivalButtonWrap{
-    font-size: 200%;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    color: black;
-    background-color: white;
-    border: 5px solid rgb(111, 77, 179);
-    border-radius: 15px;
-}
-.festivalButtonWrap:hover{
-    transform: scale(1.1);
-    background-color: rgb(111, 77, 179); 
-    border: 5px solid black; 
-}
-
-.festivalDetailsButtonWrap{
+.attendeeButtonWrap{
+    margin: 10px;
     font-size: 100%;
     text-align: center;
     display: block;
@@ -56,13 +39,31 @@
     border: 5px solid rgb(111, 77, 179);
     border-radius: 15px;
 }
-.festivalDetailsButtonWrap:hover{
+.attendeeButtonWrap:hover{
     transform: scale(1.1);
     background-color: rgb(111, 77, 179); 
     border: 5px solid black; 
 }
 
-.festivalActionButton{
+.attendeeDetailsButtonWrap{
+    font-size: 100%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: 5px solid rgb(111, 77, 179);
+    border-radius: 15px;
+}
+.attendeeDetailsButtonWrap:hover{
+    transform: scale(1.1);
+    background-color: rgb(69,69,230); 
+    border: 5px solid black; 
+}
+
+.attendeeActionButton{
     margin-top: 20px;
     text-align: center;
     color: black;
@@ -75,7 +76,7 @@
     width: 25%;
 }
 
-.festivalActionButton:hover{
+.attendeeActionButton:hover{
     transform: scale(1.1);
     background-color: rgb(232, 232, 189);  
 }

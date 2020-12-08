@@ -35,42 +35,42 @@ const FestivalDetail = ({festival}) => {
 
   return(
     <>
-      <h2>{festival.name}</h2>
-      <table className="festival-deets">
+      <h2 className="festivalTitle">{festival.name}</h2>
+      <table className="festivalDetails">
         <tbody>
           <tr>
-            <td>Start Date:</td>
+            {/* <td>Start Date:</td> */}
             <th>{getDateAsWords(festival.startDate)}</th>
           </tr>
           <tr>
-            <td>End Date:</td>
+            {/* <td>End Date:</td> */}
             <th>{getDateAsWords(festival.endDate)}</th>
           </tr>
           <tr>
-            <td>Capacity:</td>
-            <td>{festival.rooms[0].capacity}</td>
+            <td>Capacity:{festival.rooms[0].capacity}</td>
+            {/* <td>{festival.rooms[0].capacity}</td> */}
           </tr>
           <tr>
-            <td>Rooms:</td>
-            <td><Link to={roomUrl}>List Rooms</Link></td>
+            {/* <td>Rooms:</td> */}
+            <td><Link style={{ textDecoration: 'none' }} className="festivalDetailsButtonWrap" to={roomUrl}>Rooms</Link></td>
           </tr>
           <tr>
-            <td>Events:</td>
-            <td><Link to={eventUrl}>List of Events</Link></td>
+            {/* <td>Events:</td> */}
+            <td><Link  style={{ textDecoration: 'none' }} className="festivalDetailsButtonWrap" to={eventUrl}>Events</Link></td>
           </tr>
           <tr>
-            <td>Guests:</td>
-            <td><Link to={guestUrl}>List of Guest Attending</Link></td>
+            {/* <td>Guests:</td> */}
+            <td><Link style={{ textDecoration: 'none' }} className="festivalDetailsButtonWrap" to={guestUrl}>Guests</Link></td>
           </tr>
           <tr>
-            <td>Speakers:</td>
-            <td><Link to={speakerUrl}>List of Speakers</Link></td>
+            {/* <td>Speakers:</td> */}
+            <td><Link style={{ textDecoration: 'none' }} className="festivalDetailsButtonWrap" to={speakerUrl}>List of Speakers</Link></td>
           </tr>
         </tbody>
       </table>
-      <Link style={{ textDecoration: 'none' }} className="button" to={editUrl}>Edit</Link>
+      <Link style={{ textDecoration: 'none' }} className="festivalActionButton" to={editUrl}>Edit</Link>
       <br></br>
-      <Link style={{ textDecoration: 'none' }} className="button" to="/festivals">&lt; Back</Link>
+      <Link style={{ textDecoration: 'none' }} className="festivalActionButton" to="/festivals">&lt; Back</Link>
     </>
   )
 

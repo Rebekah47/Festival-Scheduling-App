@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 const FestivalForm = ({festival, onUpdate, onCreate}) => {
 
@@ -59,7 +60,7 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
 
   return (
     <>
-      <h3 className="title">{heading}</h3>
+      <h3 className="festivalTitle">{heading}</h3>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input 
@@ -96,7 +97,8 @@ const FestivalForm = ({festival, onUpdate, onCreate}) => {
         required
         value={stateCapacity}
         /><br></br>
-        <button style={{ textDecoration: 'none' }} className="button" type="submit">Save</button>
+        <button style={{ textDecoration: 'none' }} className="festivalActionButton" type="submit">Save</button>
+        <Link style={{ textDecoration: 'none' }} className="festivalActionButton" to="/festivals">&lt; Back</Link>
       </form>
     </>
   )

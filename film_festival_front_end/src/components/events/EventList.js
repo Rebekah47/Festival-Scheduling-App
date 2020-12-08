@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Trailer from './Trailer.js'
+import './Events.css';
 import SearchContainer from '../../containers/SearchContainer.js';
 
 const EventList = ({events, extraUrl}) => {
@@ -39,15 +40,15 @@ const EventList = ({events, extraUrl}) => {
 		if (event.eventType.type !== "Attending"){
 			return(
 				<tr key={index}>
-					<td>{event.name}</td>
+					<td className="bold">{event.name}</td>
 					<td>{event.room.festival.name}</td>
 					<td>{event.room.name}</td>
 					<td>{event.startTime.substring(0, 10)}</td>
 					<th>{event.startTime.substring(11, 16)}</th>
 					<td>{event.eventType.type}</td>
 					<th>{event.runTime}</th>
-					<td><button onClick={() => {handleClick(event.trailerLink)}}>Click for Preview</button></td>
-					<td><Link to={getEditUrl(event.id)}>edit</Link></td>
+					<td><button className="eventsButtonWrap" onClick={() => {handleClick(event.trailerLink)}}>Click for Preview</button></td>
+					<td><Link className="eventsButtonWrap" to={getEditUrl(event.id)}>Edit</Link></td>
 				</tr>
 			)
 		} else {
@@ -60,8 +61,8 @@ const EventList = ({events, extraUrl}) => {
 
 	return (
 		<>
-			<h2>All Events</h2>
-			<table className="events-table">
+			<h2 className="eventsTitle">All Events</h2>
+			<table className="eventsTable">
 				<tbody>
 					<tr>
 						<th>Event Name</th>
@@ -76,8 +77,10 @@ const EventList = ({events, extraUrl}) => {
 					{eventsNodes}
 				</tbody>
 			</table>
-			<Link to={getNewUrl}>Create New</Link>
-			<Trailer trailerLink={trailer}/>
+			<Link className="eventsActionButton" style={{ textDecoration: 'none' }}  to={getNewUrl}>Create New</Link>
+			<div className="trailer">			
+			<Trailer classname="trailer" trailerLink={trailer}/>
+			</div>
 			<button><SearchContainer objects={events}/></button>
 		
 		</>

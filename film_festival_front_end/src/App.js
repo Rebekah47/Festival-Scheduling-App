@@ -12,10 +12,9 @@ const App = () => {
     <>
       <header>
       <div class="tcontainer"><div class="ticker-wrap"><div class="ticker-move">
-        <div class="ticker-item">Festival Tracker</div>
-        <div class="ticker-item">Aliquam consequat varius consequat.</div>
-        <div class="ticker-item">Festival Tracker</div>
-        <div class="ticker-item">Pellentesque auctor molestie orci ut blandit.</div>
+      <div class="ticker-item">CodeClan2020</div>
+        <div class="ticker-item">Film Festival Tracker</div>
+        <div class="ticker-item">CodeClan2020</div>
       </div></div></div>
       </header>
       <main>

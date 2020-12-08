@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import './Events.css';
+import {Link} from 'react-router-dom';
 
 const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) => {
 
@@ -126,7 +128,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
 
   return (
     <>
-      <h3>{heading}</h3>
+      <h3 className="eventsTitle">{heading}</h3>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input 
@@ -135,6 +137,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="name"
           onChange={handleChange}
           value={stateEvent.name}
+          required
         />
         <label>Start Date and Time:</label>
         <input 
@@ -142,6 +145,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="startTime"
           onChange={handleChange}
           value={stateEvent.startTime}
+          required
         />
         <label>Age Rating:</label>
         <input
@@ -149,6 +153,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="ageRating"
           onChange={handleChange}
           value={stateEvent.ageRating}
+          required
         />
         <label>Run Time(minutes):</label>
         <input
@@ -156,6 +161,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="runTime"
           onChange={handleChange}
           value={stateEvent.runTime}
+          required
         />
         <label>Preview Link:</label>
         <input
@@ -163,23 +169,26 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
           name="trailerLink"
           onChange={handleChange}
           value={stateEvent.trailerLink}
+          required
         />
         <label>Event Type:</label>
-        <select name="eventType" onChange={handleEventType} defaultValue={findEventTypeIndex() || 'select event type'}>
+        <select required name="eventType" onChange={handleEventType} defaultValue={findEventTypeIndex() || 'select event type'}>
           <option disabled value='select event type'>Select an Event Type</option>
           {eventTypeOptions}
         </select>
         <label>Select Festival:</label>
-        <select name="festival" onChange={handleFestival} defaultValue={findFestivalIndex() || 'select festival'}>
+        <select  required name="festival" onChange={handleFestival} defaultValue={findFestivalIndex() || 'select festival'}>
           <option disabled value='select festival'>Select Festival</option>
           {festivalOptions}
         </select>
         <label>Select Room:</label>
-        <select name="room" onChange={handleRoom} defaultValue={findRoomIndex() || 'select room'}>
+        <select required name="room" onChange={handleRoom} defaultValue={findRoomIndex() || 'select room'}>
           <option disabled value='select room'>Select Room</option>
           {roomOptions}
         </select>
-        <button type="submit">Save</button>
+        <button className="eventsActionButton" type="submit">Save</button>
+        <Link style={{ textDecoration: 'none' }} className="eventsActionButton" to="/events">&lt; Back</Link>
+        
       </form>
     </>
   )
