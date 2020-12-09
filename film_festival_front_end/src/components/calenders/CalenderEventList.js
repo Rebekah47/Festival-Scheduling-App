@@ -9,7 +9,7 @@ const CalenderEventList = ({events, date}) => {
   }
 
   const eventNodes = events.map ((event, index) => {
-    if (event.startTime.substring(0,10) === date.toISOString().substring(0,10) && event.name !== "Attending"){
+    if (event.startTime.substring(0,10) === date.toISOString().substring(0,10)){
       return(
         <tr key={index}>
           <td>{event.name}</td>
