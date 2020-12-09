@@ -26,23 +26,67 @@ const CalenderEventList = ({events, date}) => {
 
   const handleFestivalClick = () => {
     console.log(eventNodes)
-    // const newNodes = eventNodes.sort(function (a, b){
-    //     var festName1 = a.props.children[1].props.children.toUpperCase();
-    //     var festName2 = b.props.children[1].props.children.toUpperCase();
-    //     if (festName1 < festName2) {
-    //       return -1;
-    //     }
-    //     if (festName2 < festName1){
-    //       return 1
-    //     }
-    //     return 0
-    //   })
-    //   console.log(newNodes)
+
+
+    const newNodes = eventNodes.sort(function (a, b){
+        var festName1 = a
+        var festName2 = b
+
+        if(festName1 == null && festName2 == null){
+          return 0
+        }
+
+        if(festName1 == null){
+          return 1
+        }
+
+        if(festName2 == null){
+          return -1
+        }
+
+        if (festName1.props.children[1].props.children.toUpperCase() < festName2.props.children[1].props.children.toUpperCase()) {
+          return -1;
+        }
+        if (festName2.props.children[1].props.children.toUpperCase() < festName1.props.children[1].props.children.toUpperCase()){
+          return 1
+        }
+        return 0
+      })
+      console.log(newNodes)
 
     }
 
 
   const handleRoomClick = () => {
+    console.log(eventNodes)
+
+
+    const newNodes = eventNodes.sort(function (a, b){
+        var festName1 = a
+        var festName2 = b
+
+        if(festName1 == null && festName2 == null){
+          return 0
+        }
+
+        if(festName1 == null){
+          return 1
+        }
+
+        if(festName2 == null){
+          return -1
+        }
+
+        if (festName1.props.children[2].props.children.toUpperCase() > festName2.props.children[2].props.children.toUpperCase()) {
+          return -1;
+        }
+        if (festName2.props.children[2].props.children.toUpperCase() > festName1.props.children[2].props.children.toUpperCase()){
+          return 1
+        }
+        return 0
+      })
+      console.log(newNodes)
+      eventNodes = newNodes
 
   }
 
