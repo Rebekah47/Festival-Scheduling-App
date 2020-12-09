@@ -26,7 +26,7 @@ const FestivalList = ({festivals}) => {
 
   return(
     <>
-    <h1 className="festivalTitle">Festival</h1>
+    <h1 className="festivalTitle">Festivals</h1>
     <table className="festivalTable">
       <tbody>
         <tr>

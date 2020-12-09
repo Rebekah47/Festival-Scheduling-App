@@ -5,7 +5,7 @@ const RoomForm = ({festival, room, onUpdate, onCreate}) => {
   const [stateRoom, setStateRoom] = useState({
     name:"",
     capacity:0,
-    festival:festival
+    festival:null
   })
 
   let heading;
@@ -16,7 +16,7 @@ const RoomForm = ({festival, room, onUpdate, onCreate}) => {
         id:room.id,
         name:room.name,
         capacity:room.capacity,
-        festival:festival
+        festival:room.festival
       };
       setStateRoom(currentRoom);
     }

@@ -81,3 +81,12 @@ label{
     margin-right: auto; */
     width: 100%;
 }
+
+img {
+    margin: auto;
+    display: block;
+}
+
+a {
+    margin: 20px;
+}

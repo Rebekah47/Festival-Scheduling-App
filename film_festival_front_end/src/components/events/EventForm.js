@@ -119,7 +119,7 @@ const EventForm = ({event, eventTypes, festivals, rooms, onUpdate, onCreate}) =>
   })
 
   const roomOptions = rooms.map((room, index) => {
-    if (room.festival.id === stateFestivalId && room.name !== "Attending"){
+    if (room.festival.id === stateFestivalId && room.name !== "Full Festival"){
       return <option key={index} value={index}>{room.name}</option>
     } else {
       return null

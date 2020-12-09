@@ -18,10 +18,12 @@ const SearchContainer = ({objects}) => {
             setStateSearch(copiedSearch)
         }
         const results = objects.map((object, index) => {
-            if(object.name.toLowerCase().includes(stateSearch.name)){
+            if (stateSearch.name === ""){
+                return null
+            } else if(object.name.toLowerCase().includes(stateSearch.name)) {
                 return <li key={index}> {object.name} </li>
             } else {
-                return
+                return null
             }
         })
         return (

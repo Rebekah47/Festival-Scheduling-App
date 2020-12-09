@@ -67,9 +67,9 @@ public class DataLoader implements ApplicationRunner {
     Festival marvel = new Festival("Marvel Cinematic Universe", localDate3, localDate4);
     festivalRepo.save(marvel);
 
-    Room Four = new Room("Room Four", 900, lotr);
+    Room Four = new Room("Full Festival", 900, lotr);
     roomRepo.save(Four);
-    Room Five = new Room("Room Five", 600, marvel);
+    Room Five = new Room("Full Festival", 600, marvel);
     roomRepo.save(Five);
     Room One = new Room("Room One", 60, lotr);
     roomRepo.save(One);
@@ -80,7 +80,7 @@ public class DataLoader implements ApplicationRunner {
     Room Six = new Room("Room Six", 200, marvel);
     roomRepo.save(Six);
 
-    Speaker speaker1 = new Speaker("Ian McKellen", "test_url", "test_headshot", "test requirements");
+    Speaker speaker1 = new Speaker("Ian McKellen", "https://en.wikipedia.org/wiki/Ian_McKellen", "https://i.pinimg.com/originals/f0/8c/0f/f08c0ff9ffb61619557f1b8f9bc37049.jpg", "test requirements");
     speakerRepo.save(speaker1);
     Speaker speaker2 = new Speaker("Viggo Mortensen", "test_url", "test_headshot", "test requirements");
     speakerRepo.save(speaker2);

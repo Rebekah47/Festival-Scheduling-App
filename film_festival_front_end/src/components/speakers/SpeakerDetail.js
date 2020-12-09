@@ -10,15 +10,12 @@ const SpeakerDetail = ({speaker}) => {
   return (
     <>
       <h2 className="speakersTitle">{speaker.name}</h2>
+      <img height={"200px"} src={speaker.headShot} alt=""/>
       <table className="speakersTable2">
         <tbody>
           <tr>
-            <label className="speakersLabel">Website URL:</label>
-            <a href={speaker.webUrl}>{speaker.webUrl}</a>
-          </tr>
-          <tr>
-            <label className="speakersLabel">Headshot URL:</label>
-            <a href={speaker.headShot}>{speaker.headShot}</a>
+            <label className="speakersLabel">More Info</label>
+            <a href={speaker.webUrl}>Link</a>
           </tr>
           <tr>
             <label className="speakersLabel">Accessibility Requirements</label>

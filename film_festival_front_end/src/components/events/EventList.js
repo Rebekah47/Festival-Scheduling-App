@@ -29,13 +29,15 @@ const EventList = ({events, extraUrl}) => {
 	}
 
 	const handleClick = (url) => {
-		setTrailer(url)
-
+		if (trailer !== url){
+			setTrailer(url)
+		} else {
+			setTrailer("")
+		}
+		
 	}
 	
 	const eventsNodes = events.map((event, index) => {
-
-		const trailerLink = event.trailerLink;
 
 		if (event.eventType.type !== "Attending"){
 			return(
@@ -47,7 +49,7 @@ const EventList = ({events, extraUrl}) => {
 					<th>{event.startTime.substring(11, 16)}</th>
 					<td>{event.eventType.type}</td>
 					<th>{event.runTime}</th>
-					<td><button className="eventsButtonWrap" onClick={() => {handleClick(event.trailerLink)}}>Click for Preview</button></td>
+					<td><button className="eventsButtonWrap" onClick={() => {handleClick(event.trailerLink)}}>{trailer === event.trailerLink ? "Close Preview" : "Click For Preview"}</button></td>
 					<td><Link className="eventsButtonWrap" to={getEditUrl(event.id)}>Edit</Link></td>
 				</tr>
 			)
