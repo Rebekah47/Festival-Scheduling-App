@@ -5,7 +5,8 @@ import './SearchCss.css';
 const SearchContainer = ({objects}) => {
     const [stateSearch, setStateSearch] = useState(
        {
-           name: ""
+           name: "",
+           id: ""
         }
     )
     if(objects.length === 0){
@@ -17,15 +18,19 @@ const SearchContainer = ({objects}) => {
             copiedSearch[propertyName] = evt.target.value.toLowerCase();
             setStateSearch(copiedSearch)
         }
-        const results = objects.map((object, index) => {
-            if (stateSearch.name === ""){
-                return null
-            } else if(object.name.toLowerCase().includes(stateSearch.name)) {
-                return <li key={index}> {object.name} </li>
+    
+    const results = objects.map((object, index) => {
+        if (stateSearch.name.length > 0){
+            if(object.name.toLowerCase().includes(stateSearch.name)){
+                const path = window.location.href + "/" + (object.id)
+                return <li classname="results"><a href={path}>{object.name}</a></li>
             } else {
-                return null
+                return
+                }
             }
         })
+
+
         return (
             <>
             <br></br>
@@ -39,8 +44,8 @@ const SearchContainer = ({objects}) => {
                         onChange={handleChange}
                     />
                     <FontAwesomeIcon icon={faSearch}/>
+                    {results}
                 </label>
-                {results}
             </>
             )
 }

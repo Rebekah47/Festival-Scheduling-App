@@ -7,7 +7,17 @@
 }
 .searchLabel {
     width:250px;
+    background-color: lightgray;
 }
 .searchcontainer{
     text-align: center;
+}
+
+.results{
+    padding-left: 40%;
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
 }
