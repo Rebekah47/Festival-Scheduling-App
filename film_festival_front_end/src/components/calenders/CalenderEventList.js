@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const CalenderEventList = ({events, date}) => {
 
@@ -8,8 +8,8 @@ const CalenderEventList = ({events, date}) => {
     )
   }
 
-  const eventNodes = events.map ((event, index) => {
-    if (event.startTime.substring(0,10) === date.toISOString().substring(0,10) && event.name !== "Attending"){
+  let eventNodes = events.map ((event, index) => {
+    if (event.startTime.substring(0,10) === date.toISOString().substring(0,10)){
       return(
         <tr key={index}>
           <td>{event.name}</td>
@@ -24,16 +24,48 @@ const CalenderEventList = ({events, date}) => {
     }
   })
 
+  const handleFestivalClick = () => {
+    console.log(eventNodes)
+    // const newNodes = eventNodes.sort(function (a, b){
+    //     var festName1 = a.props.children[1].props.children.toUpperCase();
+    //     var festName2 = b.props.children[1].props.children.toUpperCase();
+    //     if (festName1 < festName2) {
+    //       return -1;
+    //     }
+    //     if (festName2 < festName1){
+    //       return 1
+    //     }
+    //     return 0
+    //   })
+    //   console.log(newNodes)
+
+    }
+
+
+  const handleRoomClick = () => {
+
+  }
+
+  const handleTimeClick = () => {
+
+  }
+
+  const handleRunningClick = () => {
+
+  }
+
+
+
   return(
     <>
     <table>
       <tbody>
         <tr>
           <th>What</th>
-          <th>Festival</th>
-          <th>Room</th>
-          <th>Start Time</th>
-          <th>Run Time(minutes)</th>
+          <th><button onClick={handleFestivalClick}>Festival</button></th>
+          <th><button onClick={() => {handleRoomClick()}}>Room</button></th>
+          <th><button onClick={() => {handleTimeClick()}}>Start Time</button></th>
+          <th><button onClick={() => {handleRunningClick()}}>Run Time(minutes)</button></th>
         </tr>
         {eventNodes}
       </tbody>
